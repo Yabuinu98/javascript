@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const n = prompt('2~9까지중 숫자를 입력')*1
+        const a = n * 1
+        const b = n * 2
+        const c = n * 3
+        const d = n * 4
+        const e = n * 5
+        const f = n * 6
+        const g = n * 7
+        const h = n * 8
+        const i = n * 9
+        document.write(`<h1>구구단</h1><table>
+       <tr>
+        <td>${n} x 1 = </td>
+        <td>${a}</td>
+       </tr>
+       <tr>
+        <td>${n} x 2 = </td>
+        <td>${b}</td>
+       </tr>
+       <tr>
+        <td>${n} x 3 = </td>
+        <td>${c}</td>
+       </tr>
+       <tr>
+        <td>${n} x 4 = </td>
+        <td>${d}</td>
+       </tr>
+       <tr>
+        <td>${n} x 5 = </td>
+        <td>${e}</td>
+       </tr>
+       <tr>
+        <td>${n} x 6 = </td>
+        <td>${f}</td>
+       </tr>
+       <tr>
+        <td>${n} x 7 = </td>
+        <td>${g}</td>
+       </tr>
+       <tr>
+        <td>${n} x 8 = </td>
+        <td>${h}</td>
+       </tr>
+       <tr>
+        <td>${n} x 9 = </td>
+        <td>${i}</td>
+       </tr>
+    </table>`)
+    </script>
+    <style>
+        h1{
+            text-align: center;
+        }
+        table{
+            border-collapse: collapse;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+        tr,td{
+            border: 1px solid black;
+            padding: 5px;
+        }
+        tr:nth-child(even){
+            background-color: plum;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
