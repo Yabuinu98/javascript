@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 1. 국어점수 2. 수학점수 3. 과학점수를 입력받는다.
+        // 4. 그리고 3과목의 평균 점수를 출력한다.
+        // 5. 국어점수가 70점 이상이고
+        // 6. 수학점수가 50점 초과이며
+        // 7. 과학점수가 80점 이상이면
+        // 8. 화면에 true를 표시한다. 웹페이지에 표시
+        // 9. 점수가 안되면 false 를 표시한다.
+        let korea = prompt('당신의 국어점수는?')*1
+        let math = prompt('당신의 수학점수는?')*1
+        let sinc = prompt('당신의 과학점수는?')*1
+        let avg = (korea+math+sinc)/3
+        document.write(`<h1>당신의 성적은?</h1>
+    <table>
+        <tr>
+            <td>국어</td>
+            <td>수학</td>
+            <td>과학</td>
+            <td>평균</td>
+            <td>최종성적</td>
+        </tr>
+        <tr>
+            <td>${korea}</td>
+            <td>${math}</td>
+            <td>${sinc}</td>
+            <td>${avg}</td>
+            <td>${korea>=70 && math>50 && sinc>=80}</td>
+        </tr>
+    </table>`)
+    </script>
+
+    <style>
+        h1{
+            text-align: center;
+            margin-top: 100px;
+        }
+        table{
+            border-collapse: collapse;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+            font-size: 20px;
+        }
+        tr,td{
+            width: 150px;
+            height: 80px;
+            border: 1px solid black;
+        }
+        tr:first-child{
+            background-color: plum;
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+<body>
+    
+</body>
+</html>
