@@ -10,8 +10,12 @@
         const year = Number(rawInput)
         const e = year % 12
 
-        let result
-        if(e === 0){result = '원숭이'} 
+        if(e === 0){
+            document.write(`<img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F003%2F2020%2F04%2F02%2FNISI20200109_0000460060_web_20200109143639_20200402000109016.jpg&type=sc960_832" alt="원숭이" width="300px" height="300px">`)
+        }
+
+        /* let result
+        if(e === 0){result = '원숭이'}
         else if(e === 1){result = '닭'}
         else if(e === 2){result = '개'}
         else if(e === 3){result = '돼지'}
@@ -23,10 +27,17 @@
         else if(e === 9){result = '뱀'}
         else if(e === 10){result = '말'}
         else if(e === 11){result = '양'}
-        alert(`${year}년에 테어났다면 ${result} 띠입니다.`)
+        alert(`${year}년에 테어났다면 ${result} 띠입니다.`) */
     </script>
+    <style>
+        img{
+            margin: 200px;
+            border: 2px dashed black;
+            border-radius: 5%;
+        }
+    </style>
 </head>
 <body>
-    
+
 </body>
 </html>
