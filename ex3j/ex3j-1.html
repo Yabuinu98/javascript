@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력받기</title>
+    <script>
+       const year = prompt('태어나신 년도를 입력해주시오')
+       if(year < 2004){
+        alert('성인입니다.')
+       }
+       if(year > 2004){
+        alert('미성년입니다.')
+       }
+       if(Number(year) == 2004){
+        alert('이제 성인에 접어들었군요, 축하합니다')
+       }
+       //document.write(`<h1>당신은 ${y}년도 생이시군요 <br> 현재 나이는 ${2023-y+1} 살입니다.</h1>`)
+    </script>
+</head>
+<body>
+</body>
+</html>
