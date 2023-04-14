@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>거스름돈 분리하기</title>
+    <script>
+        const a = prompt('거스름돈을 입력해주세요')*1
+        const b = Math.floor(a/50000)
+        const c = Math.floor((a % 50000)/10000)
+        const d = Math.floor(((a % 50000) % 10000)/5000)
+        const e = Math.floor((((a % 50000) % 10000) % 5000)/1000)
+        const f = Math.floor(((((a % 50000) % 10000) % 5000) % 1000)/500)
+        const g = Math.floor((((((a % 50000) % 10000) % 5000) % 1000) % 500)/100)
+        const h = Math.floor(((((((a % 50000) % 10000) % 5000) % 1000) % 500) % 100)/50)
+        const i = Math.floor((((((((a % 50000) % 10000) % 5000) % 1000) % 500) % 100) % 50)/10)
+        document.write(`<h2>입력하신 <mark>${a}원</mark>을 거스름으로 분리하면</h2>
+    <table>
+        <tr>
+            <th>잔돈</th>
+            <th>개수</th>
+        </tr>
+        <tr>
+            <td>5만원권</td>
+            <td>${b}장</td>
+        </tr>
+        <tr>
+            <td>1만원권</td>
+            <td>${c}장</td>
+        </tr>
+        <tr>
+            <td>5천원권</td>
+            <td>${d}장</td>
+        </tr>
+        <tr>
+            <td>1천원권</td>
+            <td>${e}장</td>
+        </tr>
+        <tr>
+            <td>5백원</td>
+            <td>${f}개</td>
+        </tr>
+        <tr>
+            <td>1백원</td>
+            <td>${g}개</td>
+        </tr>
+        <tr>
+            <td>50원</td>
+            <td>${h}개</td>
+        </tr>
+        <tr>
+            <td>10원</td>
+            <td>${i}개</td>
+        </tr>
+    </table>`)
+    </script>
+    <style>
+        h2{
+            text-align: center;
+        }
+        table{
+            border-collapse: collapse;
+            text-align: center;
+            width: 300px;
+            margin-left: 250px;
+        }
+        tr, th, td{
+            border: 1px solid black;
+        }
+        th, td{
+            padding: 5px;
+        }
+        tr:first-child{
+            background-color: bisque;
+        }
+        td:first-child{
+            background-color: azure;
+        }
+        td:last-child{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
