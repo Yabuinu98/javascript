@@ -18,6 +18,13 @@
         let math = prompt('당신의 수학점수는?')*1
         let sinc = prompt('당신의 과학점수는?')*1
         let avg = (korea+math+sinc)/3
+
+        if (korea>=70 && math>50 && sinc>=80) {
+            confirm("합격 당신의 성적을 보시겠습니까?")
+        } else {
+            confirm("탈락 당신의 성적을 보시겠습니까?")
+        }
+        
         document.write(`<h1>당신의 성적은?</h1>
     <table>
         <tr>
