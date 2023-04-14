@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if else 조건문2</title>
+    <script>
+        //if만을 사용해서 js03-02를 만들었다면 이젠 if와 else if를 사용해봅니다.
+        //100 : A+
+        //90 <= x < 100 : A
+        //80 <= x < 90 : B
+        //70 <= x < 80 : C
+        //60 <= x < 70 : D
+        //x < 60 : F
+        const x = prompt('당신의 점수는?')
+        const n = prompt('당신의 이름은?')
+        if(Number(x)==100){ 
+            alert('A+입니다.');
+            console.log('A+');
+            document.write(`
+                <table>
+                    <tr>
+                        <td>성명</td>
+                        <td>점수</td>
+                        <td>학점</td>
+                    </tr>
+                    <tr>
+                        <td>${n}</td>
+                        <td>${x}</td>
+                        <td> A+ </td>
+                    </tr>
+                </table>`)
+        } else if(90 <= Number(x) && Number(x) < 100){
+            alert('A입니다.');
+            console.log('A');
+            document.write(`
+                <table>
+                    <tr>
+                        <td>성명</td>
+                        <td>점수</td>
+                        <td>학점</td>
+                    </tr>
+                    <tr>
+                        <td>${n}</td>
+                        <td>${x}</td>
+                        <td> A </td>
+                    </tr>
+                </table>`)
+        } else if(80 <= Number(x) && Number(x) < 90){
+            alert('B입니다.');
+            console.log('B');
+            document.write(`
+                <table>
+                    <tr>
+                        <td>성명</td>
+                        <td>점수</td>
+                        <td>학점</td>
+                    </tr>
+                    <tr>
+                        <td>${n}</td>
+                        <td>${x}</td>
+                        <td> B </td>
+                    </tr>
+                </table>`)
+        } else if(70 <= Number(x) && Number(x) < 80){
+            alert('C입니다.');
+            console.log('C');
+            document.write(`
+                <table>
+                    <tr>
+                        <td>성명</td>
+                        <td>점수</td>
+                        <td>학점</td>
+                    </tr>
+                    <tr>
+                        <td>${n}</td>
+                        <td>${x}</td>
+                        <td> C </td>
+                    </tr>
+                </table>`)
+        } else if(60 <= Number(x) && Number(x) < 70){
+            alert('D입니다.');
+            console.log('D');
+            document.write(`
+                <table>
+                    <tr>
+                        <td>성명</td>
+                        <td>점수</td>
+                        <td>학점</td>
+                    </tr>
+                    <tr>
+                        <td>${n}</td>
+                        <td>${x}</td>
+                        <td> D </td>
+                    </tr>
+                </table>`)
+        } else if(Number(x) < 60){
+            alert('F입니다.');
+            console.log('F');
+            document.write(`
+                <table>
+                    <tr>
+                        <td>성명</td>
+                        <td>점수</td>
+                        <td>학점</td>
+                    </tr>
+                    <tr>
+                        <td>${n}</td>
+                        <td>${x}</td>
+                        <td> F </td>
+                    </tr>
+                </table>`)
+        }
+    </script>
+    <style>
+        
+        table{
+            border-collapse: collapse;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        tr,td{
+            border: 1px solid black;
+            padding: 20px;
+            font-weight: bold;
+        }
+        tr:first-child{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
