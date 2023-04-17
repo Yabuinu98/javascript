@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>응용</title>
+    <title>배열 문제</title>
     <script>
         const a = prompt('과일입력')
+        const b = prompt('추가하고픈 과일입력')
         const fur = ['딸기','바나나','사과','수박','배','키위','복숭아','포도']
         fur.splice(fur.indexOf(a),1)
+        fur.splice(fur.length-2,0,b)
         document.write(`<h1> ${fur} </h1>`)
         
     </script>
     <style>
-        h1:hover{
+        h1{
             color: white;
-            background-color: blueviolet;
+            background-color: rgb(142, 55, 223);
             display: inline-block;
             transition: 4s;
             transform: translate(300px, 300px);
