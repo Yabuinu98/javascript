@@ -6,10 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        for(let i = 1;i<24;i++){
-            console.log(i)
+        /* for(let i = 0;i<=50;i+=2){
+            console.log(`%c ${i} `, `background-color: blue; color: white; font-size: 20px;`)
         }
+        // Q : 왜 ``으로 끈어가야 스타일이 먹는건가?....
+        // A : ${}이걸주려면 ``로 끈어가야하는데 ,기준으로 css와 구문을 분리시키려면 ``으로 구분해줘야한다!!!
+        for(let j = 1;j<=50;j+=2){
+            console.log(`%c ${j} `, `background-color: red; color: white; font-size: 20px;`)
+        } */
         
+        for(let i=0;i<25;i++){
+            console.log(`%c ${i*2} `, `background-color: blue; color: white; font-size: 20px;`)
+            console.log(`%c ${i*2+1} `, `background-color: red; color: white; font-size: 20px;`)
+        }
     </script>
 </head>
 <body>
