@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤</title>
+    <script>
+        /*10% 넘어가면 R (회색)
+        5~10% SR (노란색)
+        2~5% SSR (초록)
+        2% 미만 UR (금색) */
+
+        const ran = Math.floor(Math.random()*100)
+        const ran1 = Math.floor(Math.random()*100)
+        const ran2 = Math.floor(Math.random()*100)
+        const ran3 = Math.floor(Math.random()*100)
+        const ran4 = Math.floor(Math.random()*100)
+        console.group('5회뽑기')
+        console.group('1')
+        if(ran<2){
+            console.log('%cUR 당첨', "color: red; background-color: gold; font-size: 20px;")
+        } else if(2 <= ran && ran < 5){
+            console.log('%cSSR 당첨', "color: black; background-color: green; font-size: 20px;")
+        } else if(5 <= ran && ran < 10){
+            console.log('%cSR템 당첨', "color: black; background-color: yellow; font-size: 20px;")
+        } else{
+            console.log('%cR 당첨', "color: white; background-color: gray; font-size: 20px;")
+        
+        }
+        console.groupEnd()
+        console.group('2')
+        if(ran1<2){
+            console.log('%cUR 당첨', "color: red; background-color: gold; font-size: 20px;")
+        } else if(2 <= ran1 && ran1 < 5){
+            console.log('%cSSR 당첨', "color: black; background-color: green; font-size: 20px;")
+        } else if(5 <= ran1 && ran1 < 10){
+            console.log('%cSR템 당첨', "color: black; background-color: yellow; font-size: 20px;")
+        } else{
+            console.log('%cR 당첨', "color: white; background-color: gray; font-size: 20px;")
+        
+        }
+        console.groupEnd()
+        console.group('3')
+        if(ran2<2){
+            console.log('%cUR 당첨', "color: red; background-color: gold; font-size: 20px;")
+        } else if(2 <= ran2 && ran2 < 5){
+            console.log('%cSSR 당첨', "color: black; background-color: green; font-size: 20px;")
+        } else if(5 <= ran2 && ran2 < 10){
+            console.log('%cSR템 당첨', "color: black; background-color: yellow; font-size: 20px;")
+        } else{
+            console.log('%cR 당첨', "color: white; background-color: gray; font-size: 20px;")
+        
+        }
+        console.groupEnd()
+        console.group('4')
+        if(ran3<2){
+            console.log('%cUR 당첨', "color: red; background-color: gold; font-size: 20px;")
+        } else if(2 <= ran3 && ran3 < 5){
+            console.log('%cSSR 당첨', "color: black; background-color: green; font-size: 20px;")
+        } else if(5 <= ran3 && ran3 < 10){
+            console.log('%cSR템 당첨', "color: black; background-color: yellow; font-size: 20px;")
+        } else{
+            console.log('%cR 당첨', "color: white; background-color: gray; font-size: 20px;")
+        
+        }
+        console.groupEnd()
+        console.group('5')
+        if(ran4<2){
+            console.log('%cUR 당첨', "color: red; background-color: gold; font-size: 20px;")
+        } else if(2 <= ran4 && ran4 < 5){
+            console.log('%cSSR 당첨', "color: black; background-color: green; font-size: 20px;")
+        } else if(5 <= ran4 && ran4 < 10){
+            console.log('%cSR템 당첨', "color: black; background-color: yellow; font-size: 20px;")
+        } else{
+            console.log('%cR 당첨', "color: white; background-color: gray; font-size: 20px;")
+        
+        }
+        console.groupEnd()
+
+        console.groupEnd()
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>
