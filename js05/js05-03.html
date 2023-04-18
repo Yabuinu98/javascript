@@ -9,16 +9,29 @@
         const input = prompt('동물이름을 입력해주세요')
         const arr = ['강아지','고양이','코끼리','원숭이','호랑이','거북이','토끼']
         const a = arr.indexOf(input)
-        for(let i=0;i<arr.length;i++){
+        /* for(let i=0;i<arr.length;i++){
+            document.write(`<span><mark>${arr[i]}</mark></span>`)
             console.log(i, arr[i])
             if(i==a){break}
+        } */
+
+
+         // 문제. 동물을 입력받으면 우선 홈페이지에 다 나오고 그다음 검색받은 동물까지 색칠
+        let b = arr.splice(a,1)
+        for(let i=0;i<arr.length;i++){
+            //document.write(`<span>${arr[i]}</span>`)
+            //if(i==a){break;}
         }
+
         
         //거꾸로 뽑아내기
         /*for(let i=arr.length-1;i>=0;i--){
             console.log(i, arr[i])
         }*/
     </script>
+    <style>
+        span{}
+    </style>
 </head>
 <body>
     
