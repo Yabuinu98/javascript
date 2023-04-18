@@ -5,7 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>p.187 피라미드를 역삼각형으로 피라미드3</title>
-    
+    <script>
+        let output = ''
+        for(let i = 1; i < 9; i++){
+            for(let k = 0; k<i; k++){
+                output += ' '
+            }
+            for(let j =9; j > i; j--){
+                output += '*'
+            }
+            output += '\n'
+        }
+        console.log(`%c${output}`,`color:pink;`)
+    </script>
 </head>
 <body>
     

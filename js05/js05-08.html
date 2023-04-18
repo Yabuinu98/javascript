@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p.193 마름모형 피라미드4 </title>
+    <script>
+        let output = ''
+        let output1 = ''
+        for(let i = 1; i < 6; i++){
+            for(let j = 6; j > i; j--){
+                output += ' '
+            }
+            for(let k = 0; k < i*2-1; k++){
+                output += '*'
+            }
+            output += '\n'
+        }
+        for(let l = 1; l < 6; l++){
+            for(let m = 6; m > l; m--){
+                output1 += ' '
+            }
+            for(let n = 0; n < l*2-1; n++){
+                output1 += '*'
+            }
+            output1 += '\n'
+        }
+        console.log(output, output1)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
