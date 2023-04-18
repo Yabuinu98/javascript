@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p.187 피라미드1</title>
+    <script>
+        /* 노가다
+        for(let i=1;i<=9;i++){
+           if(i==1){document.write(`<div>*</div>`)}
+           if(i==2){document.write(`<div>**</div>`)}
+           if(i==3){document.write(`<div>***</div>`)}
+           if(i==4){document.write(`<div>****</div>`)}
+           if(i==5){document.write(`<div>*****</div>`)}
+           if(i==6){document.write(`<div>******</div>`)}
+           if(i==7){document.write(`<div>*******</div>`)}
+           if(i==8){document.write(`<div>********</div>`)}
+           if(i==9){document.write(`<div>*********</div>`)}
+        } */
+
+        // 이건 샘 힌트를 참고!!
+        //
+        let output = ''
+        for(let i = 1;i<10;i++){
+            for(let j = 0;j<i;j++){
+                output += '*'
+            }
+            output += '\n'
+        }
+        console.log(`%c${output}`, 'color:pink;')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
