@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for구문 문제</title>
+    <script>
+        const r = Math.floor(Math.random()*100)+1
+        for(let i = 0; i<5; i++){
+
+            const b = prompt('1번째 기회입니다.')*1
+            if(r===b){
+                document.write(`정답입니다. 축하합니다. ${i}번째에 맞추셨습니다.`)
+            } else if(r>b){
+                alert('up')
+            } else if(r<b){
+                alert('down')
+            }
+            if(b===r)break;
+
+            const c = prompt('2번째 기회입니다.')*1
+            if(c===r){
+                document.write(`정답입니다. 축하합니다. ${i}번째에 맞추셨습니다.`)
+            } else if(r>c){
+                alert('up')
+            } else if(r<c){
+                alert('down')
+            }
+            if(c===r)break;
+
+            const d = prompt('3번째 기회입니다.')*1
+            if(d===r){
+                document.write(`정답입니다. 축하합니다.`)
+            } else if(r>d){
+                alert('up')
+            } else if(r<d){
+                alert('down')
+            }
+            if(d===r)break;
+
+            const e = prompt('마지막 기회입니다.')*1
+            if(e===r){
+                document.write(`정답입니다. 축하합니다.`)
+            } else{
+                alert(`GAME OVER 정답은 : ${r}`)
+            }
+            if(e===r)break;
+
+            }
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while 문제(js06-06.html을 while로 풀기)</title>
+    <script>
+        const input = prompt('0~10사이의 숫자를 입력하시오')*1
+        const ran = Math.floor(Math.random()*10)+1
+        while(ran === input){
+            if(ran > input){
+                alert('up')
+            } else if(ran < input){
+                alert('down')
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>
