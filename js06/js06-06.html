@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>for구문 문제</title>
     <script>
+        
         const r = Math.floor(Math.random()*100)+1
         for(let i = 1; i<5; i++){
 
-            const b = prompt('1번째 기회입니다.')*1
+            const b = prompt('1번째 기회입니다.'+ r)*1
             if(r===b){
                 alert(`정답입니다. 축하합니다.`)
             } else if(r>b){

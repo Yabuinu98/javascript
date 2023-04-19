@@ -4,21 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>while 문제(js06-06.html을 while로 풀기)</title>
-    <script>
-        const input = prompt('0~10사이의 숫자를 입력하시오')*1
-        const ran = Math.floor(Math.random()*10)+1
-        let i = 0
-        while(!ran===input){
-            if(ran > input){
-                alert('up')
-            } else if(ran < input){
-                alert('down')
-            }
-            i++
-        }
-    </script>
+    <title>눈치게임 만들기</title>
     
+    <script>
+        //랜덤으로 임의의 수를 뽑기 0~100까지
+        //내가 입력한 수 보다 큰지 작은지 나타내기
+        //반복적으로 풀어가다가 5회가 넘어가면 게임오버(정답 보여주기)
+        //맞추면 성공축하 메세지 (꾸미기)(정답 보여주기)
+        const ran =  Math.floor(Math.random()*100)
+
+        for( let i = 0 ; i < 5 ; i++){
+            const aaa = prompt('0~100 중 하나 맞춰보세요.'+ran)
+            
+            if (ran < aaa){
+                alert('입력하신 숫자보다 작습니다.') 
+            }
+            else if (ran > aaa){
+                alert('입력하신 숫자보다 큽니다.')
+            }
+            else if (ran == aaa (alert('축하합니다. 정답입니다. 정답은:'+ran ))){ 
+                break }
+            if (i===4)break
+            }
+            console.log(ran)
+    
+    </script>
 </head>
 <body>
     

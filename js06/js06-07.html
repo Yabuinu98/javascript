@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제2</title>
+    <script>
+        const a = ['가위', '바위', '보']
+        let c = 0
+        for(let i = 1; i < 6; i++){
+            const input = prompt('가위, 바위, 보 중에 입력해주세요.')
+            let b = Math.floor(Math.random()*3)
+            if(a[b] == '가위'){
+            if(input=='가위'){
+                alert('비김')
+            } if(input=='바위'){
+                alert('승리')
+                c += 1
+            } if(input=='보'){
+                alert('패배')
+            }
+        } if(a[b] == '바위'){
+            if(input=='가위'){
+                alert('패배')
+            } if(input=='바위'){
+                alert('비김')
+            } if(input=='보'){
+                alert('승리')
+                c += 1
+            }
+        } if(a[b] == '보'){
+            if(input=='가위'){
+                alert('승리')
+                c += 1
+            } if(input=='바위'){
+                alert('패배')
+            } if(input=='보'){
+                alert('비김')
+            }
+        }
+    }
+    console.log(`5판중 당신은 ${c}판을 이겼으므로 승률은 ${c/5*100}%입니다.`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
