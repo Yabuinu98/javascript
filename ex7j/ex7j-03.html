@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위 차트표시(시각화)</title>
+    
+</head>
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        
+        /* 주사위 통계 내 코드 */
+        const dice = [0,0,0,0,0,0,0]
+        for(let i = 0; i<100; i++){
+        const array = new Uint8Array(1);
+        crypto.getRandomValues(array);
+        const ran = array[0] % 6 + 1
+        dice[ran-1]++
+        }
+        for(let j = 0; j<dice.length-1; j++){
+            dice[6] += dice[j]
+        }
+        const dchart = dice.splice(0,dice.length-1)
+
+        
+        /* 차트 그리기 */
+        const ctx = document.getElementById('myChart');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['주사위값 : 1', '주사위값 : 2', '주사위값 : 3', '주사위값 : 4', '주사위값 : 5', '주사위값 : 6'],
+            datasets: [{
+              label: '# of Votes',
+              data: dchart,
+              // data에는 배열을 넣어야한다!!!
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+</body>
+</html>
