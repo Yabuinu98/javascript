@@ -8,8 +8,8 @@
     <script>
         // 주사위 선생님 답안
         // let dice1 = dice2 = dice3 = dice4 = dice5 = dice6 = 0
-        let sum = 0
-        const dice = [0,0,0,0,0,0]
+        // let sum = 0
+        const dice = [0,0,0,0,0,0,0]
         for(let i = 0; i<100; i++){
         const array = new Uint8Array(1);
         crypto.getRandomValues(array);
@@ -24,10 +24,15 @@
             if(ran==6){dice[5]++} */
     }
         console.log(dice)
-        for(const n of dice){
+        
+        for(let j = 0; j<dice.length-1; j++){
+            dice[6] += dice[j]
+        }
+        console.log(dice)
+        /* for(const n of dice){
             sum += n
         }
-        console.log(sum)
+        console.log(sum) */
     </script>
 </head>
 <body>
