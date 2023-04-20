@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위 문제</title>
+    <script>
+        // 1. 주사위를 10만번 던져서 
+        // 2. 1 ~ 6까지 몇번 나오는가
+        // 3. 통계 내어라
+        // 4. 검증하여라.
+        // 5. 확률 조작하기 3의눈이 10% 높게 나와라 => 100000*0.1 = 10000 => 10000 = 3에 추가 => 90000 => 확률을 돌린다 
+        // 6. while(true){if(input1==ran){ran = Math.floor(Math.random()*6)+1} else {break;}} => 이해하기
+
+        const input1 = prompt('어느 눈의 숫자를 조작하시겠습니까(1 ~ 6)')*1
+        const input2 = prompt('얼마나 더 나오게 조정하시겠습니까?')*1
+        const y = 100000
+        const x = y-y*(input2/100)
+        const v = y*(input2/100)
+        let a = b = c = d = e = f = 0
+
+        if(input1 == 1){
+            a = v
+                for(let i = 0; i<x; i++){
+                    let ran = Math.floor(Math.random()*6)+1
+                    while(true){
+                        if(input1==ran){
+                            ran = Math.floor(Math.random()*6)+1
+                        } else {
+                            break;
+                        }
+                    }
+                    if(ran == 1){a += 1}
+                    if(ran == 2){b += 1}
+                    if(ran == 3){c += 1}
+                    if(ran == 4){d += 1}
+                    if(ran == 5){e += 1}
+                    if(ran == 6){f += 1}
+                    if(i == x)break;
+            }
+            }
+
+        if(input1 == 2){
+            b = v
+                for(let i = 0; i<x; i++){
+                    let ran = Math.floor(Math.random()*6)+1
+                    while(true){
+                        if(input1==ran){
+                            ran = Math.floor(Math.random()*6)+1
+                        } else {
+                            break;
+                        }
+                    }
+                    if(ran == 1){a += 1}
+                    if(ran == 2){b += 1}
+                    if(ran == 3){c += 1}
+                    if(ran == 4){d += 1}
+                    if(ran == 5){e += 1}
+                    if(ran == 6){f += 1}
+                    if(i == x)break;
+            }
+        }
+        if(input1 == 3){
+            c = v
+                for(let i = 0; i<x; i++){
+                    let ran = Math.floor(Math.random()*6)+1
+                    while(true){
+                        if(input1==ran){
+                            ran = Math.floor(Math.random()*6)+1
+                        } else {
+                            break;
+                        }
+                    }
+                    if(ran == 1){a += 1}
+                    if(ran == 2){b += 1}
+                    if(ran == 3){c += 1}
+                    if(ran == 4){d += 1}
+                    if(ran == 5){e += 1}
+                    if(ran == 6){f += 1}
+                    if(i == x)break;
+            } 
+        }
+        if(input1 == 4){
+            d = v
+                for(let i = 0; i<x; i++){
+                    let ran = Math.floor(Math.random()*6)+1
+                    while(true){
+                        if(input1==ran){
+                            ran = Math.floor(Math.random()*6)+1
+                        } else {
+                            break;
+                        }
+                    }
+                    if(ran == 1){a += 1}
+                    if(ran == 2){b += 1}
+                    if(ran == 3){c += 1}
+                    if(ran == 4){d += 1}
+                    if(ran == 5){e += 1}
+                    if(ran == 6){f += 1}
+                    if(i == x)break;
+            }
+        }
+        if(input1 == 5){
+            e = v
+                for(let i = 0; i<x; i++){
+                    let ran = Math.floor(Math.random()*6)+1
+                    while(true){
+                        if(input1==ran){
+                            ran = Math.floor(Math.random()*6)+1
+                        } else {
+                            break;
+                        }
+                    }
+                    if(ran == 1){a += 1}
+                    if(ran == 2){b += 1}
+                    if(ran == 3){c += 1}
+                    if(ran == 4){d += 1}
+                    if(ran == 5){e += 1}
+                    if(ran == 6){f += 1}
+                    if(i == x)break;
+            }
+        }
+        if(input1 == 6){
+            f = v
+                for(let i = 0; i<x; i++){
+                    let ran = Math.floor(Math.random()*6)+1
+                    while(true){
+                        if(input1==ran){
+                            ran = Math.floor(Math.random()*6)+1
+                        } else {
+                            break;
+                        }
+                    }
+                    if(ran == 1){a += 1}
+                    if(ran == 2){b += 1}
+                    if(ran == 3){c += 1}
+                    if(ran == 4){d += 1}
+                    if(ran == 5){e += 1}
+                    if(ran == 6){f += 1}
+                    if(i == x)break;
+            }
+        }
+        
+        console.log(`횟수 \n1:${a}번 \n2:${b}번 \n3:${c}번 \n4:${d}번 \n5:${e}번 \n6:${f}번 \n총합:${a+b+c+d+e+f}번`)
+        console.log(`확률 \n1:${a/y*100}% \n2:${b/y*100}% \n3:${c/y*100}% \n4:${d/y*100}% \n5:${e/y*100}% \n6:${f/y*100}% \n합:${(a/y+b/y+c/y+d/y+e/y+f/y)*100}%`)
+        document.write(`<table>
+        <tr>
+            <th colspan="4">주사위를 ${y}번 던졌을때</th>
+        </tr>
+        <tr>
+            <td>1이</td>
+            <td>${a}번</td>
+            <td>확률</td>
+            <td>${a/y*100}%</td>
+        </tr>
+        <tr>
+            <td>2가</td>
+            <td>${b}번</td>
+            <td>확률</td>
+            <td>${b/y*100}%</td>
+        </tr>
+        <tr>
+            <td>3이</td>
+            <td>${c}번</td>
+            <td>확률</td>
+            <td>${c/y*100}%</td>
+        </tr>
+        <tr>
+            <td>4가</td>
+            <td>${d}번</td>
+            <td>확률</td>
+            <td>${d/y*100}%</td>
+        </tr>
+        <tr>
+            <td>5가</td>
+            <td> ${e}번</td>
+            <td>확률</td>
+            <td> ${e/y*100}%</td>
+        </tr>
+        <tr>
+            <td>6이</td>
+            <td>${f}번</td>
+            <td>확률</td>
+            <td>${f/y*100}%</td>
+        </tr>
+        <tr>
+            <td>총합</td>
+            <td>${a+b+c+d+e+f}번</td>
+            <td>확률</td>
+            <td>${(a/y+b/y+c/y+d/y+e/y+f/y)*100}%</td>
+        </tr>
+    </table>`)
+    </script>
+    <style>
+        table{
+            border-collapse: collapse;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        tr, th, td{
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 주사위 선생님 답안
+        // let dice1 = dice2 = dice3 = dice4 = dice5 = dice6 = 0
+        let sum = 0
+        const dice = [0,0,0,0,0,0]
+        for(let i = 0; i<100; i++){
+        const array = new Uint8Array(1);
+        crypto.getRandomValues(array);
+        const ran = array[0] % 6 + 1
+        dice[ran-1]++
+        
+        /* if(ran==1){dice[0]++}
+            if(ran==2){dice[1]++}
+            if(ran==3){dice[2]++}
+            if(ran==4){dice[3]++}
+            if(ran==5){dice[4]++}
+            if(ran==6){dice[5]++} */
+    }
+        console.log(dice)
+        for(const n of dice){
+            sum += n
+        }
+        console.log(sum)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
