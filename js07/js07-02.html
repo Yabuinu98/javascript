@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 1 ~ 45까지의 수중에서 3개를 랜덤으로 뽑아 배열에 넣기(중복가능)
+        
+        /* 1번 방식(야가다) */
+        const array = new Uint8Array(3);
+        crypto.getRandomValues(array);
+        const ran = array[0] % 45 + 1
+        const ran1 = array[1] % 45 + 1
+        const ran2 = array[2] % 45 + 1
+        const roto2 = [ran, ran1, ran2]
+        console.log(roto2)
+
+        /* 2번 방식(반복구문) */
+        const roto = [0,0,0]
+        for(let i = 0; i<3; i++){
+        const array = new Uint8Array(3);
+        crypto.getRandomValues(array);
+        const ran = array[0] % 45 + 1
+        roto[i] += ran
+        }
+        console.log(roto)
+
+
+        /* 3번 방식(인덱스 속성만으로만) */
+        const a = []
+        for(let j = 0; j<3; j++){
+        const array1 = new Uint8Array(3);
+        crypto.getRandomValues(array1);
+        const ren = array1[0] % 45 + 1
+        a.push(ren)
+        }
+        console.log(a)
+
+        /* 3-1번 방식(인덱스+splice) */
+        const group = ['','','']
+        const b = Math.floor(Math.random()*45)+1
+        const c = Math.floor(Math.random()*45)+1
+        const d = Math.floor(Math.random()*45)+1
+        group.splice(0,1,b)
+        group.splice(1,1,c)
+        group.splice(2,1,d)
+        console.log(group)
+
+        // 2. 1 ~ 45까지의 수중에서 3개를 랜덤으로 뽑아 배열에 넣기(중복 불가능!!!!!)
+        // 2-1. p.167 값으로 요소 제거하기의 예제 마지막 구문 => 배열에서 찾고자 하는 값이 없으면 '.indexOf = -1'을 출력하는것을 이용!!!
+        const v = []
+        for(let x = 0; x < 6; x++){
+            let rin = Math.floor(Math.random()*45)+1
+            if(v.indexOf(rin)===-1){
+                v.push(rin)
+            } else {
+                rin = Math.floor(Math.random()*45)+1
+            }
+        }
+        console.log(v)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

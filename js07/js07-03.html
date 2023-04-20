@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온도 표시하기</title>
+    <script>
+        let a = '추워요'
+        let b = '시원해요'
+        let c = '보통이에요'
+        let d = '조금 더워요'
+        let e = '매우 더워요'
+        const tem = prompt('현재 온도를 입력해주세요')
+        if(tem < 16){
+            document.write(`<table>
+        <tr>
+            <td colspan="6">16미만</td><td colspan="4">16이상 ~ 22미만</td><td colspan="4">22이상 ~ 28미만</td><td colspan="3">28이상 ~ 32미만</td><td colspan="6">32이상</td>
+        </tr>
+        <tr>
+            <td class="po"></td><td class="po"></td><td class="po"></td><td class="po"></td><td class="po"></td><td class="po"></td><td class="bl"></td><td class="bl"></td><td class="bl"></td><td class="bl"></td><td class="ye"></td><tdclass="ye"></td><td class="ye"></td><td class="ye"></td><td class="be"></td><td class="be"></td><td class="be"></td><td class="red"></td><td class="red"></td><td class="red"></td><td class="red"></td><td class="red"></td><td class="red"></td>
+        </tr>
+        <tr>
+            <td colspan="6">${a}</td><td colspan="4"></td><td colspan="4"></td><td colspan="3"></td><td colspan="6"></td>
+        </tr>
+    </table>
+    <p>현재 온도는 ${tem} 이며, 상태는 ${a}</p>`)
+        } if(16 <= tem && tem < 22){
+            document.write(`<table>
+        <tr>
+            <td colspan="6">16미만</td><td colspan="4">16이상 ~ 22미만</td><td colspan="4">22이상 ~ 28미만</td><td colspan="3">28이상 ~ 32미만</td><td colspan="6">32이상</td>
+        </tr>
+        <tr>
+            <td class="po"></td><td class="po"></td><td class="po"></td><td class="po"></td><td class="po"></td><td class="po"></td><td class="bl"></td><td class="bl"></td><td class="bl"></td><td class="bl"></td><td class="ye"></td><tdclass="ye"></td><td class="ye"></td><td class="ye"></td><td class="be"></td><td class="be"></td><td class="be"></td><td class="red"></td><td class="red"></td><td class="red"></td><td class="red"></td><td class="red"></td><td class="red"></td>
+        </tr>
+        <tr>
+            <td colspan="6"></td><td colspan="4">${b}</td><td colspan="4"></td><td colspan="3"></td><td colspan="6"></td>
+        </tr>
+    </table>
+    <p>현재 온도는 ${tem} 이며, 상태는 ${b}</p>`)
+        } if(22 <= tem && tem < 28){
+            document.write(`<table>
+        <tr>
+            <td colspan="6">16미만</td><td colspan="4">16이상 ~ 22미만</td><td colspan="4">22이상 ~ 28미만</td><td colspan="3">28이상 ~ 32미만</td><td colspan="6">32이상</td>
+        </tr>
+        <tr>
+            <td class="po"></td><td class="po"></td><td class="po"></td><td class="po"></td><td class="po"></td><td class="po"></td><td class="bl"></td><td class="bl"></td><td class="bl"></td><td class="bl"></td><td class="ye"></td><tdclass="ye"></td><td class="ye"></td><td class="ye"></td><td class="be"></td><td class="be"></td><td class="be"></td><td class="red"></td><td class="red"></td><td class="red"></td><td class="red"></td><td class="red"></td><td class="red"></td>
+        </tr>
+        <tr>
+            <td colspan="6"></td><td colspan="4"></td><td colspan="4">${c}</td><td colspan="3"></td><td colspan="6"></td>
+        </tr>
+    </table>
+    <p>현재 온도는 ${tem} 이며, 상태는 ${c}</p>`)
+        } if(28 <= tem && tem < 32){
+            document.write(`<table>
+        <tr>
+            <td colspan="6">16미만</td><td colspan="4">16이상 ~ 22미만</td><td colspan="4">22이상 ~ 28미만</td><td colspan="3">28이상 ~ 32미만</td><td colspan="6">32이상</td>
+        </tr>
+        <tr>
+            <td class="po"></td><td class="po"></td><td class="po"></td><td class="po"></td><td class="po"></td><td class="po"></td><td class="bl"></td><td class="bl"></td><td class="bl"></td><td class="bl"></td><td class="ye"></td><tdclass="ye"></td><td class="ye"></td><td class="ye"></td><td class="be"></td><td class="be"></td><td class="be"></td><td class="red"></td><td class="red"></td><td class="red"></td><td class="red"></td><td class="red"></td><td class="red"></td>
+        </tr>
+        <tr>
+            <td colspan="6"></td><td colspan="4"></td><td colspan="4"></td><td colspan="3">${d}</td><td colspan="6"></td>
+        </tr>
+    </table>
+    <p>현재 온도는 ${tem} 이며, 상태는 ${d}</p>`)
+        } if(32 <= tem){
+            document.write(`<table>
+        <tr>
+            <td colspan="6">16미만</td><td colspan="4">16이상 ~ 22미만</td><td colspan="4">22이상 ~ 28미만</td><td colspan="3">28이상 ~ 32미만</td><td colspan="6">32이상</td>
+        </tr>
+        <tr>
+            <td class="po"></td><td class="po"></td><td class="po"></td><td class="po"></td><td class="po"></td><td class="po"></td><td class="bl"></td><td class="bl"></td><td class="bl"></td><td class="bl"></td><td class="ye"></td><tdclass="ye"></td><td class="ye"></td><td class="ye"></td><td class="be"></td><td class="be"></td><td class="be"></td><td class="red"></td><td class="red"></td><td class="red"></td><td class="red"></td><td class="red"></td><td class="red"></td>
+        </tr>
+        <tr>
+            <td colspan="6"></td><td colspan="4"></td><td colspan="4"></td><td colspan="3"></td><td colspan="6">${e}</td>
+        </tr>
+    </table>
+    <p>현재 온도는 ${tem} 이며, 상태는 ${e}</p>`)
+        }
+        
+    </script>
+    <style>
+        table{
+            border-collapse: collapse;
+            text-align: center;
+        }
+        tr,td{
+            border: 1px solid black;
+            width: 50px;
+            height: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
