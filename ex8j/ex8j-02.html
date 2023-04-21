@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료 교환</title>
+    <script>
+        /* A와 B의 값을 바꾸고 싶을때 A <-> B 
+           temp = A
+           A = B
+           b = temp */
+        //    temp = arr[0]
+        //    arr[0] = arr[1]
+        //    arr[1] = temp
+        const arr = [150,64,44]
+        let temp
+        for(let i = 0; i<100;i++){
+        if(arr[0]<=arr[1] && arr[1]<=arr[2])break
+            if(arr[0]>arr[1]){
+                temp = arr[0]
+            arr[0] = arr[1]
+            arr[1] = temp
+            }
+            if(arr[1]>arr[2]){
+                [arr[0], arr[1], arr[2]] = [arr[0], arr[2], arr[1]]
+            }
+        }
+        console.log(arr)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

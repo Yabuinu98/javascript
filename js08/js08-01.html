@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // * 1 ~ 45까지의 수중에서 3개를 랜덤으로 뽑아 배열에 넣은 후 오름차순 정렬(일단은 중복 무관으로 하자...) //
+        
+        const arr = []
+        for(let i = 0; i < 3; i++){
+            let ran = Math.floor(Math.random()*45)+1
+            arr[i] = ran
+        }
+        console.log(arr)
+        
+         for(let k = 0; k < 100; k++){
+            if(arr[0] <= arr[1] && arr[1] <= arr[2])break
+            if(arr[0] > arr[1]){
+                [arr[0], arr[1], arr[2]] = [arr[1], arr[0], arr[2]]
+            }
+            if(arr[1] > arr[2]){
+                [arr[0], arr[1], arr[2]] = [arr[0], arr[2], arr[1]]
+            }
+         }
+         console.log(arr)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
