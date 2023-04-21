@@ -48,7 +48,7 @@
         group.splice(2,1,d)
         console.log(group)
 
-        // 2. 1 ~ 45까지의 수중에서 3개를 랜덤으로 뽑아 배열에 넣기(중복 불가능!!!!!)
+        // 2. 1 ~ 45까지의 수중에서 6개를 랜덤으로 뽑아 배열에 넣기(중복 불가능!!!!!)
         // 2-1. p.167 값으로 요소 제거하기의 예제 마지막 구문 => 배열에서 찾고자 하는 값이 없으면 '.indexOf = -1'을 출력하는것을 이용!!!
         const v = []
         for(let x = 0; x < 6; x++){
@@ -57,6 +57,7 @@
                 v.push(rin)
             } else {
                 rin = Math.floor(Math.random()*45)+1
+                v.push(rin)
             }
         }
         console.log(v)

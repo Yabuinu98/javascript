@@ -4,30 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>온도표시하기(최대 줄인버전)</title>
     <script>
-        let a = '정상온도를 벗어났습니다.'
-        let b = '시원하네요.'
-        let c = '보통이에요'
-        let d = '갑갑하네요'
-        let e = '정상온도를 벗어났습니다.'
+        let a = ['정상온도를 벗어났습니다.', '시원하네요', '보통이에요', '갑갑하네요']
         let v = w = x = y = z = ''
         const tem = prompt('현재 온도를 입력해주세요')*1
-        if(tem < 16){
-            v += a
-        }
-        if(16 <= tem && tem < 22){
-            w += b
-        }
-        if(22 <= tem && tem < 28){
-            x += c
-        }
-        if(28 <= tem && tem < 32){
-            y += d
-        }
-        if(32 <= tem){
-            z += e
-        }
+        if(tem < 16){v += a[0]}
+        if(16 <= tem && tem < 22){w = a[1]}
+        if(22 <= tem && tem < 28){x = a[2]}
+        if(28 <= tem && tem < 32){y = a[3]}
+        if(32 <= tem){z += a[0]}
         let list = ''
             list = `<table>`
             list += `<tr><td colspan="6">16미만</td><td colspan="4">16이상 ~ 22미만</td><td colspan="4">22이상 ~ 28미만</td><td colspan="3">28이상 ~ 32미만</td><td colspan="6">32이상</td></tr>`
@@ -36,7 +22,6 @@
             list += `</table>`
             list += `<p>현재 온도는 ${tem} 이며, 상태는 ${v+w+x+y+z}</p>`
         document.write(list)
-    
     </script>
     <style>
         table{
