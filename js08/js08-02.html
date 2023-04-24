@@ -8,12 +8,10 @@
     <script>
         /* 중복 안되게 1 ~ 45까지 랜덤 6개빼고 배열로 정리  */
         const arr = []
-        for(let i = 0; i < 6; i++){
+        for(;;){
+            if(arr.length==6)break;
             let ran = Math.floor(Math.random()*45)+1
             if(arr.indexOf(ran)===-1){
-                arr.push(ran)
-            } else {
-                ran = Math.floor(Math.random()*45)+1
                 arr.push(ran)
             }
         }
