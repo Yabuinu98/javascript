@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수문제</title>
+    <script>
+        // 1. 1~45 임의의 수를 중복없이 6자리를 뽑아 차례(오름차순)로 배열에 넣으시오.
+        // 2. 위의 배열을 10(최종 10,000)개 준비하여 각각 번호별로 나온수를 카운팅하라
+        
+        // 1-1. 1~45 임의의 수 중복없이 6자리 뽑아서 배열에 넣기
+        // const b = []
+        // for(;;){
+        //     if(b.length==6)break;
+        //     const c = Math.floor(Math.random()*45)+1
+        //     if(b.indexOf(c)===-1){
+        //         b.push(c)
+        //     }
+        // }
+        
+        // 1-2. 배열을 차례로 정렬(오름차순)
+        // console.log(b.sort((a,b)=>a-b))
+
+        // 2-1. 위의 배열을 10개(최종 10,000개)를 준비한다.(함수 사용) / 10개임을 알 수 있게 번호 표시하며
+        /* function roto(){
+            const b = []
+            for(;;){
+                if(b.length==6)break;
+                const c = Math.floor(Math.random()*45)+1
+                if(b.indexOf(c)===-1){b.push(c)}
+            }
+            console.log(b.sort((a,b)=>a-b))
+        }
+        for(let d = 0; d<10; d++){
+            console.log(d+1)
+            roto()
+        } */
+
+        // 2-2. 배열 10개(최종 10,000개)를 각 번호별로 나온 갯수를 표시하시오.
+        let cot = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        function roto(){
+            let b = []
+            let c = Math.floor(Math.random()*45)+1
+            for(;;){
+                if(b.length==6)break;
+                while(true){
+                if(b.indexOf(c)===-1){
+                    b.push(c)
+                    break;
+                } else {
+                    c = Math.floor(Math.random()*45)+1
+                }
+                }   
+                for(let j = 0; j < cot.length; j++){
+                    if(c===j+1){
+                    cot[j] += 1
+                    // console.log(j+1, cot[j])
+                    }
+                }
+            }
+            console.log(b.sort((a,b)=>a-b))
+        }
+        for(let d = 0; d<10; d++){
+            console.log(d+1)
+            roto()
+        }
+        console.log(`나온 횟수 ${cot}`)
+        document.write(`<table>
+        <tr>
+            <td>1</td>
+            <td>${cot[0]}</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>${cot[1]}</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>${cot[2]}</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>${cot[3]}</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>${cot[4]}</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>${cot[5]}</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>${cot[6]}</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>${cot[7]}</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>${cot[8]}</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>${cot[9]}</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>${cot[10]}</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>${cot[11]}</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>${cot[12]}</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>${cot[13]}</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>${cot[14]}</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>${cot[15]}</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>${cot[16]}</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>${cot[17]}</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>${cot[18]}</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>${cot[19]}</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>${cot[20]}</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>${cot[21]}</td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>${cot[22]}</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>${cot[23]}</td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>${cot[24]}</td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td>${cot[25]}</td>
+        </tr>
+        <tr>
+            <td>27</td>
+            <td>${cot[26]}</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>${cot[27]}</td>
+        </tr>
+        <tr>
+            <td>29</td>
+            <td>${cot[28]}</td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td>${cot[29]}</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td>${cot[30]}</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>${cot[31]}</td>
+        </tr>
+        <tr>
+            <td>33</td>
+            <td>${cot[32]}</td>
+        </tr>
+        <tr>
+            <td>34</td>
+            <td>${cot[33]}</td>
+        </tr>
+        <tr>
+            <td>35</td>
+            <td>${cot[34]}</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>${cot[35]}</td>
+        </tr>
+        <tr>
+            <td>37</td>
+            <td>${cot[36]}</td>
+        </tr>
+        <tr>
+            <td>38</td>
+            <td>${cot[37]}</td>
+        </tr>
+        <tr>
+            <td>39</td>
+            <td>${cot[38]}</td>
+        </tr>
+        <tr>
+            <td>40</td>
+            <td>${cot[39]}</td>
+        </tr>
+        <tr>
+            <td>41</td>
+            <td>${cot[40]}</td>
+        </tr>
+        <tr>
+            <td>42</td>
+            <td>${cot[41]}</td>
+        </tr>
+        <tr>
+            <td>43</td>
+            <td>${cot[42]}</td>
+        </tr>
+        <tr>
+            <td>44</td>
+            <td>${cot[43]}</td>
+        </tr>
+        <tr>
+            <td>45</td>
+            <td>${cot[44]}</td>
+        </tr>
+        <tr>
+            <td>합계</td>
+            <td>${cot[0]+cot[1]+cot[2]+cot[3]+cot[4]+cot[5]+cot[6]+cot[7]+cot[8]+cot[9]+cot[10]+cot[11]+cot[12]+cot[13]+cot[14]+cot[15]+cot[16]+cot[17]+cot[18]+cot[19]+cot[20]+cot[21]+cot[22]+cot[23]+cot[24]+cot[25]+cot[26]+cot[27]+cot[28]+cot[29]+cot[30]+cot[31]+cot[32]+cot[33]+cot[34]+cot[35]+cot[36]+cot[37]+cot[38]+cot[39]+cot[40]+cot[41]+cot[42]+cot[43]+cot[44]}</td>
+        </tr>
+    </table>`)
+    </script>
+    <style>
+        table{
+            border-collapse: collapse;
+            text-align: center;
+        }
+        tr, td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

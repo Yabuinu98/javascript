@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로또 중복제거</title>
     <script>
+        function lotto(){
         const arr = []
         while(arr.length<6){
             const ran = Math.floor(Math.random()*45+1)
             if(!arr.includes(ran))arr.push(ran)
         }
         console.log(arr.sort((a,b)=>(a-b)))
+        }
+        for(let x = 0;x<100;x++){
+            console.log(x+1)
+            lotto()
+        }
     </script>
 </head>
 <body>
