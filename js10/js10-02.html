@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단 최신판</title>
+    <script>
+        // 구구단을 만들고 간단한 퀴즈를 내고 맞추면 축하합니다 표시(body에)
+        // 틀렸으면 다시 공부하세요 출력 후 2 ~ 9단 출력(body에)
+        
+        const ran1 = Math.floor(Math.random()*8)+2
+        const ran2 = Math.floor(Math.random()*9)+1
+        let list = ``
+        const num = 2
+        for(let i = 0; i < 8; i++){
+            list += `<div class="cl"><p>${num+i}단</p>`
+                list += `<div>${num+i} x 1 = ${(num+i)*1}</div>`
+                list += `<div>${num+i} x 2 = ${(num+i)*2}</div>`
+                list += `<div>${num+i} x 3 = ${(num+i)*3}</div>`
+                list += `<div>${num+i} x 4 = ${(num+i)*4}</div>`
+                list += `<div>${num+i} x 5 = ${(num+i)*5}</div>`
+                list += `<div>${num+i} x 6 = ${(num+i)*6}</div>`
+                list += `<div>${num+i} x 7 = ${(num+i)*7}</div>`
+                list += `<div>${num+i} x 8 = ${(num+i)*8}</div>`
+                list += `<div>${num+i} x 9 = ${(num+i)*9}</div></div>`
+            }
+        const input = prompt(`${ran1} X ${ran2} = 값은?`, '답을 입력하시오.')
+        if(ran1*ran2==input){
+            alert('정답입니다. 축하합니다.')
+            document.write(`<h1>당신은 구구단 Master</h1>`)
+        } else{
+            alert(`오답입니다.아직 공부가 필요합니다. 틀리신 단은 ${ran1}단 입니다.`)
+            document.write(list)
+        }
+
+    </script>
+    <style>
+        h1{
+            display: inline-block;
+            transition: 2s;
+            background-color: aquamarine;
+            transform: translate(250px, 250px) scale(1.2);
+        }
+        .cl{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            display: inline-block;
+            margin: 20px;
+            font-size: 16px;
+            background-color: bisque;
+            width: 200px;
+        }
+        .cl:hover{
+            transition: 1s;
+            transform: scale(1.1);
+            background-color: aquamarine;
+        }
+        p{
+            border-bottom: 2px solid black;
+            text-align: center;
+            padding: 10px;
+            margin-top: -10px;
+            font-size: 20px;
+        }
+        div{
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
