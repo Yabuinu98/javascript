@@ -6,13 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로또 차트표시(시각화)</title>
     <style>
-        table{
-            border-collapse: collapse;
-            text-align: center;
-        }
-        tr, td{
-            border: 1px solid black;
-        }
+        
     </style>
 </head>
 <body>
@@ -48,11 +42,11 @@
             }
             console.log(b.sort((a,b)=>a-b))
         }
-        for(let d = 0; d<10; d++){
+        for(let d = 0; d<100; d++){
             console.log(d+1)
             roto()
         }
-        const dchart = cot.splice(0,cot.length-1)
+        const dchart = cot.splice(0,cot.length)
 
         
         /* 차트 그리기 */
