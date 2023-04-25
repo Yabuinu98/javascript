@@ -16,11 +16,23 @@
                 }
             }
             console.log(`%c${arr}`,'background-color: gray; font-size: 30px; color: red;')
+            document.write(`<button onclick="b1()">버튼1</button> <button onclick="b2()">버튼2</button><p>[${arr}]</p>`)
         }
         function b2(){
             console.log(`%c${arr.sort((a,b)=>a-b)}`,'background-color: gray; font-size: 30px; color: red;')
+            document.write(`<p>[${arr}]</p>`)
         }
     </script>
+    <style>
+        /* button{
+            background-color: pink;
+            border: 0px solid pink;
+            border-radius: 5px;
+            width: 50px;
+            height: 30px;
+            margin: 50px;
+        } */
+    </style>
 </head>
 <body>
     <button onclick="b1()">버튼1</button>
