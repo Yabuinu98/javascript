@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형아가 한 할인율(이게 더 쉬움)</title>
+    <script>
+        function margin(mag){
+        let a = [800000, 2200000, 2000000, 800000, 120000, 80000, 50000, 6050000]
+        let b = ['컴퓨터', '노트북', '태블릿', '스마트폰', '공유기', '키보드', '마우스']
+        let list = ''
+        for(let j=1;j<=4;j++){list += `<button onclick="margin(${j*10/100})">할인율${j*10}%</button>`}
+        list += `<table style=" border-collapse: collapse;text-align: center;width: 400px;height: 200px;">`
+            list += `<tr><th colspan="4"; style=" border: 1px solid black;">판매 품목</th></tr>`
+            list += `<tr><td style=" border: 1px solid black;background-color: darksalmon;">No.</td><td style=" border: 1px solid black;background-color: darksalmon;">품목</td><td style=" border: 1px solid black;background-color: darksalmon;">정가</td><td style=" border: 1px solid black;background-color: darksalmon;">할인율</td></tr>`
+        for(let i=0;i<7;i++){list += `<tr><td style=" border: 1px solid black;">${i}</td><td style=" border: 1px solid black;">${b[i]}</td><td style=" border: 1px solid black;">₩${a[i]}</td><td style=" border: 1px solid black;">₩${a[i]-a[i]*mag}</td></tr>`}
+            list += `<tr><td colspan="2"; style=" border: 1px solid black;">합계</td><td style=" border: 1px solid black;">₩${a[6]}</td><td style=" border: 1px solid black;">₩${a[7]-a[7]*mag}</td></tr></table>`
+        document.close()
+        document.write(list)
+        }
+    </script>
+</head>
+<body>
+    <button onclick="margin(0.1)">10%</button>
+    <button onclick="margin(0.2)">20%</button>
+    <button onclick="margin(0.3)">30%</button>
+    <button onclick="margin(0.4)">40%</button>
+</body>
+</html>
