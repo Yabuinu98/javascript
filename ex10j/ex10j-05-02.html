@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구구단 풀이</title>
     <script>
+        // 1. 구구단의 2 ~ 4단까지 버튼을 만들고 누르면 화면에 구구단 표가 보이도록 해라
+        // 2. 다른 버튼을 누르면 다른 구구단도 보이게 해라
+        /* 문제 세분화 */
+        // 1-1. 구구단의 2 ~ 4단의 버튼을 만든다. => body에 버튼3개넣기
+        // 1-2. 구구단 표가 보이도록 해라(아마 2단 누르면 -> 2단 / 3단 누르면 -> 3단 인듯...?)
         function gugu(gu){
             list = ''
             for(let j=2;j<10;j++){list += `<div onclick="gugu(${j})">구구단 ${j}단</div>`}
