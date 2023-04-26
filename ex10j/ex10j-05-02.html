@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단 풀이</title>
+    <script>
+        function gugu(gu){
+            list = ''
+            for(let j=2;j<10;j++){list += `<div onclick="gugu(${j})">구구단 ${j}단</div>`}
+            list += `<table style="border-collapse: collapse;width: 400px;height: 500px;text-align: center;font-size: 2em;">`
+        for(let i=0;i<10;i++){list += `<tr style="border: 1px solid black;"><td style="width: 70%;border: 1px solid black;">${gu} X ${i} =</td><td>${gu*i}</td></tr>`}
+            list += `</table>`
+            document.close()
+            document.write(list)}
+    </script>
+</head>
+<body>
+    <div onclick="gugu(2)">2단</div>
+    <div onclick="gugu(3)">3단</div>
+    <div onclick="gugu(4)">4단</div>
+    <div onclick="gugu(5)">5단</div>
+    <div onclick="gugu(6)">6단</div>
+    <div onclick="gugu(7)">7단</div>
+    <div onclick="gugu(8)">8단</div>
+    <div onclick="gugu(9)">9단</div>
+</body>
+</html>
