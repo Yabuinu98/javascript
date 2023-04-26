@@ -4,32 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>할인율</title>
+    <title>함수의 파라미터(입력), 리턴(출력)</title>
     <script>
-        const arr1 = [0.9, 0.8, 0.7, 0.6]
-        const arr2 = ['컴퓨터', '노트북', '태블릿', '스마트폰', '공유기', '키보드', '마우스']
-        const arr3 = [800000, 2200000, 800000, 2000000, 120000, 80000, 50000]
-        function disc(a){
-            let list = ``
-            for(let j = 0;j<4;j++){
-            if(1-(a/100)==arr1[j]){
-                for(let x = 1; x<=4; x++){list += `<button onclick="disc(${x*10})">${x*10}%</button>`}
-                list += `<table style="border-collapse: collapse; text-align: center; margin-top: 10px;">`
-                list += `<tr style="border: 1px solid black;"><th colspan="4" style="border: 1px solid black;">판매 품목</th></tr>`
-                list += `<tr style="border: 1px solid black; background-color: antiquewhite;"><td style="border: 1px solid black;">No.</td><td style="border: 1px solid black;">품목</td><td style="border: 1px solid black;">정가</td><td style="border: 1px solid black;">할인율</td></tr>`
-                for(let i = 0;i<arr2.length;i++){list += `<tr style="border: 1px solid black;"><td style="border: 1px solid black;">${i+1}</td><td style="border: 1px solid black;">${arr2[i]}</td><td style="border: 1px solid black;">₩${arr3[i]}</td><td style="border: 1px solid black;">₩${arr3[i]*arr1[j]}</td></tr>`}
-                list += `<tr style="border: 1px solid black;"><td colspan="2" style="border: 1px solid black;">합계</td><td style="border: 1px solid black;">₩${6050000}</td><td style="border: 1px solid black;">₩${6050000*arr1[j]}</td></tr></table>`
-                }
-            }
-            document.close()
-            document.write(list)
+        /* return은 값을 반환하고 함수를 종료한다!!! */
+        let val = 777
+        function fn(){
+            val = 888
+            console.log(val)
+            // function은 return을 보면 종료한다.
+            return 100
+            val = 999
+            console.log(val)
         }
+        const v1 = fn()
+        console.log(v1) // 100을 출력함 return값이 100이기때문에
     </script>
 </head>
 <body>
-    <button onclick="disc(10)">10%</button>
-    <button onclick="disc(20)">20%</button>
-    <button onclick="disc(30)">30%</button>
-    <button onclick="disc(40)">40%</button>
+    
 </body>
 </html>

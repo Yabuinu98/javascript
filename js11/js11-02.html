@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개변수 1</title>
+    <script>
+        // num = 123은 num의 초기값을 지정해줘야할때 사용한다.
+        function fn(num=123){
+            return num
+        }
+        console.log(fn(333))
+        // fn(num)은 num의 값을 가지므로 배열안에 사용할 수 있다 !!!
+        const arr = [11,22,33,44,55,fn(), fn(444)]
+        console.log('arr', arr)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
