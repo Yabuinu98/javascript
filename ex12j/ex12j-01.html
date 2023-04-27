@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 매개변수 4개를 넣었을때 그중 가장 작은 수를 리턴하라
+        // ex) min(77,22,3,44) => 3
+        
+        /* 내 방식1(변수를 지정했을때) */
+        function fn(arr){
+            for(;;){
+                if(arr[0]<arr[1] && arr[1]<arr[2] && arr[2]<arr[3])break;
+                if(arr[0]>arr[1]){[arr[0], arr[1], arr[2], arr[3]] = [arr[1], arr[0], arr[2], arr[3]]}
+                if(arr[1]>arr[2]){[arr[0], arr[1], arr[2], arr[3]] = [arr[0], arr[2], arr[1], arr[3]]}
+                if(arr[2]>arr[3]){[arr[0], arr[1], arr[2], arr[3]] = [arr[0], arr[1], arr[3], arr[2]]}
+            }
+            return arr[0]    
+        }
+        const arr = [90,300,60,800]
+        console.log(`[${arr}]배열에서 최소값은 = ${fn(arr)}`)
+
+         /* 내 방식2(변수를 입력 받을때) */
+         function fn1(a,b,c,d){
+            let arr2 = [a,b,c,d]
+            for(;;){
+                if(arr2[0]<arr2[1] && arr2[1]<arr2[2] && arr2[2]<arr2[3])break;
+                if(arr2[0]>arr2[1]){[arr2[0], arr2[1], arr2[2], arr2[3]] = [arr2[1], arr2[0], arr2[2], arr2[3]]}
+                if(arr2[1]>arr2[2]){[arr2[0], arr2[1], arr2[2], arr2[3]] = [arr2[0], arr2[2], arr2[1], arr2[3]]}
+                if(arr2[2]>arr2[3]){[arr2[0], arr2[1], arr2[2], arr2[3]] = [arr2[0], arr2[1], arr2[3], arr2[2]]}
+            }
+            return arr2[0]   
+        }
+        // let a = prompt('값을 입력하시오', 100)*1
+        // let b = prompt('값을 입력하시오', 30)*1
+        // let c = prompt('값을 입력하시오', 500)*1
+        // let d = prompt('값을 입력하시오', 800)*1
+        console.log(`변수배열에서 최소값은 = ${fn1(100,30,500,800)}`)
+
+        /* 책 방식 - 이해가 안되네...*/
+        function min(array){
+            // 배열의 형태면 일단 입력 받아라...
+            let output = array[0]
+            for(const i of array){
+                // item은 뭐고 반복문의 반복구간이 이해가 안됨...
+                if(output > i){
+                    output = i
+                }
+            }
+            return output
+        }
+        const arr1 = [70,200,30,100,10,1200,870]
+        console.log(`[${arr1}]배열에서 최소값은 = ${min(arr1)}`)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
