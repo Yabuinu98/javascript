@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최대/최소값 구하기</title>
+    <script>
+        // '...'은 입력받은 수를 배열에 넣음 / 1,2,3,4 => ...a => [1,2,3,4]
+        // '...'을 다시 쓰면 배열안에 수를 다시 배열 밖으로 꺼냄(숫자만 나옴) / [1,2,3,4] => ...a => 1,2,3,4
+        
+        function min(...a){
+            return Math.min(...a)
+        }
+        console.log(`${min(44,66,0,-11,-22,88)}`)
+            
+        function max(...b){
+            return Math.max(...b)
+        }
+        console.log(`${max(44,66,0,-11,-22,88)}`)
+                
+        function comp(...c){
+            return [Math.min(...c), Math.max(...c)]
+        }
+        console.log(`${comp(44,66,0,-11,-22,88)}`)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

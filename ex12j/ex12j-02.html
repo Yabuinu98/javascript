@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>즉시실행 함수</title>
+    <script>
+        let add = function(a,b){
+            return a + b
+        }
+        console.log(add(10,7))
+        console.log(typeof(add))
+
+        let add2 = (function(a,b){
+            return a + b
+        })(7,10)
+        // console.log(add2(7,10))
+        console.log(add2)
+        console.log(typeof(add2))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
