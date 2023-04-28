@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p.212 기본매개변수함수1</title>
+    <script>
+        function earnings(name, wage=9620, hours=200){
+            console.log(`# ${name} 님의 급여 정보`)
+            console.log(`- 시급: ${wage}원`)
+            console.log(`- 근무 시간: ${hours}시간`)
+            console.log(`- 주급여: ${wage * (hours/5)}원`)
+            console.log(`- 월급여: ${wage * hours}원`)
+            console.log('')
+        }
+        earnings('구름')
+        earnings('별', 10000)
+        earnings('인성', 10000, 260)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
