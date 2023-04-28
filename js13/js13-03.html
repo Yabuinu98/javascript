@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나머지매개변수3</title>
+    <script>
+        function min(first, ...resets){
+            let output
+            let items
+            if(Array.isArray(first)){
+                // min(배열)로 입력 받으면 first:[52, 273, 32, 103, 275, 24, 57] /...resets는 없음
+                output = first[0]
+                // output에다가 52 넣는다
+                items = first
+                // items에는 [52, 273, 32, 103, 275, 24, 57] 넣는다
+            } 
+            else if(typeof(first) === 'number'){
+                // min(숫자,...)로 입력 받으면 first : 52 / ...resets : [273, 32, 103, 275, 24, 57]
+                output = first
+                // output에다가 52 넣는다
+                items = resets
+                // items에는 [273, 32, 103, 275, 24, 57] 넣는다
+            }
+            
+            for(const item of items){
+                if(output>item){
+                    output = item
+                }
+            }
+            return output
+        }
+        console.log(`min(배열): ${min([52, 273, 32, 103, 275, 24, 57])}`)
+        console.log(`min(숫자,...): ${min(52, 273, 32, 103, 275, 24, 57)}`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
