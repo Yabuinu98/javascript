@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콜백함수 연습하기</title>
+    <script>
+        // 파이어 마법을 쓰는 마법사 캐릭을 만든다.
+        function ror(heroName,level,callback){
+            if(level>=6){
+                document.write(`<h1>${heroName}님께서 궁극기를 시전하였습니다!!</h1>`)
+                callback(level)
+            }else{
+                document.write(`<h1>${heroName}님께서 평타를 때렸습니다. 아야 ~</h1>`)
+            }
+        }
+        
+        function fire(ff){
+            for(let i = 1; i<ff; i++){
+                document.write(`${i}번째 파이어를 ${i}개 던집니다.<hr>`)
+            }
+        }
+        
+        function ice(cc){
+            for(let i = 1; i<cc; i++){
+                document.write(`${i}번째 얼음송곳을 ${cc*i}개 던집니다.<hr>`)
+            }
+        }
+        
+        function slow(ss){
+            for(let i = 1; i<ss; i++){
+                document.write(`${i}번째 때려서 ${i*5}% 느려집니다.<hr>`)
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
