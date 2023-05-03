@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열의 map() 메소드</title>
+    <script>
+        // 속성 string.length => 괄호로 안끝남
+        // 메소드 Math.max() => 괄호로 끝남
+
+        const arr1 = [11,22,33,44,55]
+        // const arr2 = []
+        
+        /* for로 배열 옮기기 */
+        // for(let i=0;i<arr1.length;i++){
+        //     arr2.push(arr1[i])
+        // }
+
+        const arr2 = arr1.map(function(v,i,a){return v*2})
+        const arr3 = arr1.map(v=>v) // 위에꺼랑 같은 의미임 아래 설명 참조
+        // function(v,i,a){return v*2} => 변수 v,i,a중에 v만쓸것이므로 i,a는 생략 => function(v){return v*2}
+        // function(){} = ()=>{}이므로 / function(v){return v*2} = (v)=>{return v*2}
+        // 이후 생략 가능한 것들을 생략하면 v=>v*2
+        // 최종본 : const arr2 = arr1.map(v=>v*2)
+        console.log(arr2)
+        console.log(arr3)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

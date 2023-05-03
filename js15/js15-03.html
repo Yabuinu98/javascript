@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // map()을 사용하여 1~200까지의 값을 차례로 담고있는 배열을 생성하고
+        // 단, 요소중 11의 배수일때는 두배의 값을 가지고 있어야한다.
+
+        // 문제 세분화
+        // 1. map()을 사용하여 1~200까지의 값을 차례로 담고있는 배열을 생성하라
+        // const arr = Array(200).fill(0).map((v,i)=>v=i+1)
+
+        // 2. 단, 요소중 11의 배수일때는 두배의 값을 가지고 있어야한다.
+        const arr = Array(100).fill(0).map((v,i)=>v=i+1)
+        arr1 = arr.map(v=>{if(v%11==0){return v*2} else{return v}})
+        console.log(arr1)
+
+        // 3. 다른방법(함수 최소화하는법)
+        const arr2 = Array(50).fill(0).map((v,i)=>v=i+1)
+        for(i=0;i<arr2.length;i++)if(!(arr2[i]%11))arr2[i]=arr2[i]*2
+        console.log(arr2)
+
+        // 4. 최소화(숙제)
+        let arr3 = Array(50).fill(0).map(function(v,i){if(arr3[i+1]%11===0){return (v+i+1)*2}else{return v+i+1}})
+        console.log(arr3)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

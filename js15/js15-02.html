@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p.223예제를 화살표함수로</title>
+    <script>
+        let numbers = [273, 52, 103, 32, 57]
+        
+        // numbers = numbers.map(function(value){return value * value})
+        // numbers.forEach(console.log) // 매개변수로 console.log를 쓴다라는게 먼말이지... => 
+        
+        numbers = numbers.map(v=>v*v)
+        console.log(numbers)
+        numbers.forEach(console.log)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
