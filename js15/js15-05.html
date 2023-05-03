@@ -24,7 +24,7 @@
         // 3. 인덱스 78부터 166까지는 2씩 증가하도록 하며
 
         // 4. 인덱스 167부터 끝까지는 -1씩 감소하도록 하라.
-        const arr = Array(30).fill(0).map((v,i)=>v=i+1)
+        const arr = Array(200).fill(0).map((v,i)=>v=i+1)
         // let arr1 = []
         // arr.map(function(v,i){
         //     if(0<=i && i<=20){arr1.push(v)}
@@ -36,14 +36,14 @@
         //     }
         // })
         arr1 = arr.map(function(v,i){
-            if(0<=i && i<=10){
+            if(0<=i && i<=77){
                 return v
             }
-            if(11<=i && i<=20){
-                return arr[10]+=2
+            if(78<=i && i<=166){
+                return arr[77]+=2
             }
-            if(21<=i && i<=30){
-                return arr[10]-=1
+            if(167<=i && i<=200){
+                return arr[77]-=1
             }
         })
         console.log(arr1)
