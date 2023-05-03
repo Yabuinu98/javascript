@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach함수 이용문제</title>
+    <script>
+        // 배열 = [1,2,3,4,5,6,7,8,9,10]중에서 짝수를 arr1 의 배열에 담고 홀수의 값은 arr2 의 배열에 담아라
+        // 단, 원본은 손상하지 않는다. (forEach사용할 것)
+        const arr = [1,2,3,4,5,6,7,8,9,10]
+        const arr1 = []
+        const arr2 = []
+        arr.forEach(function(v){
+            if(v%2===0){
+                arr1.push(v)
+            } else {
+                arr2.push(v)
+            }
+        })
+        console.log(arr)
+        console.log(arr1)
+        console.log(arr2)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
