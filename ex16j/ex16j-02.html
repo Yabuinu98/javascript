@@ -6,7 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>문제 1</title>
     <script>
-        // 팝업창에 사용자로부터 입력을 받아서 그 시간만큼 1부터 n까지 0.5초 간격으로 웹에 숫자가 상승하고 멈추는 웹페이지를 만들어라
+        // 팝업창에 사용자로부터 n을 입력을 받아서 1부터 n까지 0.5초 간격으로 웹에 숫자가 상승하고 멈추는 웹페이지를 만들어라
+
+        // 문제 세분화
+        // 1. 팝업창에 사용자로부터 n을 입력 받아라
+        const n = prompt('숫자를 어디까지 셀것입니까?')*1
+
+        // 2. 1부터 n까지 0.5초 간격으로 웹에 숫자가 상승하고 멈추는 웹페이지를 만들어라
+        let num = 0
+        const tid = setInterval(() => {document.close();document.write(`<h1>${++num}</h1>`)}, 0.5*1000)
+        setTimeout(()=>{
+            clearInterval(tid)
+            document.write(`<hr><h1>다 셋습니다.</h1>`)
+        }, 0.5.n*1000)
     </script>
 </head>
 <body>
