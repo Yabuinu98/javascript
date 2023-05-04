@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열문제(map())풀이(js15-05)</title>
+    <script>
+        let ct = 0; // 값들이 저장될곳을 지정
+        const arr = Array(200).fill(0).map((_,i)=>{
+            if(i<=77) ct+=1;
+            if(78<=i && i<=166) ct+=2;
+            if(167<=i && i<=200) ct-=1;
+            return ct
+        })
+        console.log(arr)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

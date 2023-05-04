@@ -20,9 +20,8 @@
 
         // 3. 인덱스 78부터 166까지는 2씩 증가하도록 하며, 인덱스 167부터 끝까지는 -1씩 감소하도록 하라.
         const arr = Array(200).fill(0).map((v,i)=>v=i+1)
-        
         arr1 = arr.map((v,i)=>{
-            if(0<=i && i<=77)return v;
+            if(i<=77)return v;
             if(78<=i && i<=166)return arr[77]+=2;
             if(167<=i && i<=200)return arr[77]-=1;
         })

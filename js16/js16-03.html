@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자수 정렬</title>
+    <script>
+        // apple, pear, watermelon, melon, peach, strowberry, mango, banana, kiwi, grape, orange, mandarin
+        // 글자가 5글자 이상만 뽑아서 새로운 배열에 넣으시오.(10개 나와야함)
+        const arr = ['apple', 'pear', 'watermelon', 'melon', 'peach', 'strowberry', 'mango', 'banana', 'kiwi', 'grape', 'orange', 'mandarin']
+        let list = ``
+        list += `<table>`
+        list += `<tr><td>기본 배열의 값들은?</td><td colspan="10">${arr}</td></tr>`
+        list += `<tr><td>길이 5 이상의 값들은?</td>`
+        for(let i = 0; i<arr.length; i++){
+            if(arr[i].length >= 5){
+                list += `<td>${arr[i]}</td>`
+            }
+        }
+        list += `</tr>`
+        list += `</table>`
+        document.write(list)
+       
+       
+       
+        // arr1 = arr.filter(v => {return v.length >= 5})
+        // console.log(arr1)
+    </script>
+    <style>
+        table{
+            border-collapse: collapse;
+            text-align: center;
+        }
+        tr,td{
+            border: 2px solid red;
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
