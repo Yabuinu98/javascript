@@ -35,20 +35,10 @@
         //         arr1.push(arr[77]-=1)
         //     }
         // })
-        arr1 = arr.map(function(v,i){
-            if(0<=i && i<=77){
-                return v
-            }
-            if(78<=i && i<=166){
-                return arr[77]+=2
-            }
-<<<<<<< HEAD
-            if(1667<=i && i<=200){
-=======
-            if(167<=i && i<=200){
->>>>>>> 0cce3d8654af76e875a04d86bc1edeb6fc0d0ffb
-                return arr[77]-=1
-            }
+        arr1 = arr.map((v,i)=>{
+            if(0<=i && i<=77){return v}
+            if(78<=i && i<=166){return arr[77]+=2}
+            if(167<=i && i<=200){return arr[77]-=1}
         })
         console.log(arr1)
     </script>
