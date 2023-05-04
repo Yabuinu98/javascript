@@ -23,8 +23,8 @@
         for(i=0;i<arr2.length;i++)if(!(arr2[i]%11))arr2[i]=arr2[i]*2
         console.log(arr2)
 
-        // 4. 최소화(숙제)
-        let arr3 = Array(50).fill(0).map(function(v,i){if(arr3[i+1]%11===0){return (v+i+1)*2}else{return v+i+1}})
+        // 4. 최소화(숙제) -> 몰루?
+        let arr3 = Array(50).fill(0).map(function(v,i){if(v%11===0){return (v=i+1)*2}else{return v=i+1}})
         console.log(arr3)
 
     </script>
