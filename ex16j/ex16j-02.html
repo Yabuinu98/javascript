@@ -12,13 +12,16 @@
         // 1. 팝업창에 사용자로부터 n을 입력 받아라
         const n = prompt('숫자를 어디까지 셀것입니까?')*1
 
-        // 2. 1부터 n까지 0.5초 간격으로 웹에 숫자가 상승하고 멈추는 웹페이지를 만들어라
-        let num = 0
-        const tid = setInterval(() => {document.close();document.write(`<h1>${++num}</h1>`)}, 0.5*1000)
+        // 2. 1부터 0.5초 간격으로 웹에 숫자가 상승하는 웹페이지를 만들어라
+        let ct = 0
+        const tid = setInterval(() => {document.close();document.write(`<h1>${++ct}</h1>`)}, 0.5*1000)
+        
+        // 3. n까지 0.5초 간격으로 웹에 숫자가 상승하다 멈추는 웹페이지를 만들어라
         setTimeout(()=>{
             clearInterval(tid)
             document.write(`<hr><h1>다 셋습니다.</h1>`)
-        }, 0.5.n*1000)
+        }, 0.5*n*1000)
+
     </script>
 </head>
 <body>
