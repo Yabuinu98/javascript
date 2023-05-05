@@ -6,7 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>문제 2</title>
     <script>
-        // 붉은원(켜져있고)이 1초 / 흰색원(껴져있는)이 0.5초가 10회 반복되는 램프를 표현하는 페이지를 만들어라.
+        // 붉은원(켜져있고)이 1초 / 초록색원(껴져있는)이 0.5초가 10회 반복되는 램프를 표현하는 페이지를 만들어라.
+
+        //문제 세분화
+        // 1. 램프를 만들어라(div로 사각형만들고 radius로 어캐 해보자!!!)
+        // document.write(`<div class="light" style="margin:100px;">
+        //     <div class="top" style="background-color: green; width: 250px; height: 250px; border-radius: 150px;"></div>
+        //     <div class="bottom" style="background-color: gold; width: 50px; height: 80px; margin-left:100px"></div></div>`)
+
+        // 2. 붉은색으로 1초 있다가 노란색으로 꺼지는 램프로 교체
+        const tid = setInterval(() => {
+            document.write(`<div class="light" style="margin:100px;">
+            <div class="top" style="background-color: red; width: 250px; height: 250px; border-radius: 150px;"></div>
+            <div class="bottom" style="background-color: gold; width: 50px; height: 80px; margin-left:100px"></div></div>`)
+        }, 1*1000)
+        setTimeout(() => {
+            clearInterval(tid)
+            document.write(`<div class="light" style="margin:100px;">
+            <div class="top" style="background-color: green; width: 250px; height: 250px; border-radius: 150px;"></div>
+            <div class="bottom" style="background-color: gold; width: 50px; height: 80px; margin-left:100px"></div></div>`)
+        },2*1000)
+        const tid2 = setInterval(() => {
+            document.write(`<div class="light" style="margin:100px;">
+            <div class="top" style="background-color: red; width: 250px; height: 250px; border-radius: 150px;"></div>
+            <div class="bottom" style="background-color: gold; width: 50px; height: 80px; margin-left:100px"></div></div>`)
+        }, 1*1000)
+        setTimeout(() => {
+            clearInterval(tid2)
+            document.write(`<div class="light" style="margin:100px;">
+            <div class="top" style="background-color: green; width: 250px; height: 250px; border-radius: 150px;"></div>
+            <div class="bottom" style="background-color: gold; width: 50px; height: 80px; margin-left:100px"></div></div>`)
+        },2*1000)
+
     </script>
 </head>
 <body>
