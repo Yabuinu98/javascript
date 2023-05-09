@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이중충돌발생2</title>
+    <script>
+        let pi = 3.14
+        console.log(`1. 파이 값은 ${pi}입니다.`) // 1. 파이 값은 3.14입니다. => 첫 선언 그대로 노출
+
+        {
+            let pi = 3.141592
+            console.log(`2. 파이 값은 ${pi}입니다.`) // 2. 파이 값은 3.141592입니다. => '{스코프}' 안에서만 존재
+        }
+        console.log(`3. 파이 값은 ${pi}입니다.`) // 3. 파이 값은 3.14입니다. => '{스코프}' 밖이므로 최초 선언과 동일
+
+        function sample(){
+            let pi = 3.1415926535
+            console.log(`4. 파이 값은 ${pi}입니다.`) 
+        }
+        sample() // 4. 파이 값은 3.1415926535입니다. => 함수를 찍은 것이므로 함수 안에 내용이 표기
+        
+        console.log(`5. 파이 값은 ${pi}입니다.`) // 5. 파이 값은 3.14입니다. => 최초 선언과 동일
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
