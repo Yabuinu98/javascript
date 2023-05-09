@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this 문제</title>
+    <script>
+        const dog = {
+            name : '산이',
+            age : 2.5,
+            dna : '테리어',
+            eat:function(sounde='와구와구'){
+                console.log(`저희집 ${this.name}는 밥을 먹을때 ${sounde}소리가 납니다`)
+            },
+            play:function(){
+                const order = prompt('sit, jump, lay중에 맘에드는 명령을 해주세요')
+                if(order=='sit')console.log(`${this.name}가 앉습니다.`);
+                if(order=='jump')console.log(`${this.name}가 점프합니다.`);
+                if(order=='lay')console.log(`${this.name}가 눕습니다.`);
+            },
+            bow:function(soundb='멍멍'){
+                console.log(`저희집 ${this.name}는 짖을 먹을때 ${soundb}소리가 납니다`)
+            },
+        }
+        console.log(`${dog.name}는 ${dog.age}살이구 ${dog.dna}종입니다.`)
+        console.log(dog.eat())
+        console.log(dog.play())
+        console.log(dog.bow())
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

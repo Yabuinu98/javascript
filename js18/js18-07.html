@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매소드 내부의 this</title>
+    <script>
+        const cat = {
+            name: 'kitty',
+            sound:'냐옹',
+            sound2:'냥냐홍',
+            age:3,
+            eat:function(meow='냐'){
+                console.log(`${cat.name}는 ${meow}하며 밥을 먹습니다.(cat)`)
+                console.log(`${this.name}는 ${meow}하며 밥을 먹습니다.(this)`) // this는 항상 자기자신을 가리킨다
+            },
+            grum:function(a){
+                if(a=='짖어'){
+                    console.log(`${this.name}가 ${this.sound2}하고 짖습니다.`)
+                } else{
+                    console.log(`${this.name}는 자는중입니다.`)
+                }
+            }
+        }
+        console.log(cat.eat())
+        console.log(cat.grum('짖어'))
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
