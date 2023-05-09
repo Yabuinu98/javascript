@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호이스팅2</title>
+    <script>
+        /* let이 함수 안에 있는 경우 */
+        function fn(){
+            let bb // bb란 변수는 함수안에서만 존재
+            console.log(bb) // bb는 선언만 되있음 고로, ReferenceError가 아닌 undefined가 출력
+            bb = '나는 호이스팅 되었어' // bb를 '나는 호이스팅 되었어'로 초기화
+            console.log(bb) // 선언된 bb를 호출
+        }
+        fn() 
+        // console.log(bb) // bb는 함수밖에선 선언된 적이 없음
+        console.log(`------------------------------------------------`)
+
+        /* let이 함수 밖에 있는 경우 */
+        let cc // cc란 변수 선언
+        function fn(){
+            console.log(cc) // cc는 함수 내에서 선언이 돤적이 없으므로, ReferenceError 출력
+            cc = '나는 호이스팅 되었어' // cc를 '나는 호이스팅 되었어'로 초기화
+            console.log(cc) // 선언된 cc를 호출
+        }
+        fn() 
+        console.log(cc) // cc는 undefind
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
