@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this와 화살표 함수</title>
+    <script>
+      const obj = {
+        a: function () {
+          setTimeout(function () {
+            console.log(this.document);
+          }, 0);
+        },
+        b: function () {
+          setTimeout(() => {
+            console.log(this.document);
+          }, 0);
+        },
+        document: "나야나",
+      };
+      obj.a(); // #document => 한단계 위에 function에서의 값(#document)을 뽑아냄
+      obj.b(); // 나야나 => 두단계 위의 obj에서 값()을 뽑아냄
+    </script>
+  </head>
+  <body></body>
+</html>
