@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>this에 관하여</title>
     <script>
-        // const obj1 = {a:1,b:2,c:function(){console.log(this.b)}}
-        // obj1.c() // 2
-        const obj1 = {a:1,b:2,c:function(){return this.a}}
-        console.log(obj1.c()) // 1
+      // const obj1 = {a:1,b:2,c:function(){console.log(this.b)}}
+      // obj1.c() // 2
+      const obj1 = {
+        a: 1,
+        b: 2,
+        c: function () {
+          return this.a;
+        },
+      };
+      console.log(obj1.c()); // 1
 
-        // this는 바로 위 개체를 가르킨다!!!
+      // this는 바로 위 개체를 가르킨다!!!
 
-        function test(){
-            console.log(this.document) // Window를 가르킨다.
-        }
-        test() // #document
+      function test() {
+        console.log(this.document); // Window를 가르킨다.
+      }
+      test(); // #document
     </script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>
