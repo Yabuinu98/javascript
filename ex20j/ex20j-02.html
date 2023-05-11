@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메소드</title>
+    <script>
+      let str1 = "     안녕하세요     ";
+      console.log(str1);
+      console.log(str1.trim()); // 띄어쓰기 삭제
+
+      let str2 = "a,b,c,d,e,f,g,h";
+      let str2A = str2.split(","); // 문자를 배열로 만들어줌 => 문자열.split("구분자")
+      console.log(str2);
+      console.log(str2A);
+
+      const str3 = "오늘 학교에서 시험을 아주 잘 쳤어요";
+      let arr = str3.split(" ");
+      console.log(arr); // ['오늘', '학교에서', '시험을', '아주', '잘', '쳤어요']
+
+      const str4 = `내가 만약
+        나비라면
+        훨훨
+        날아갈텐데...
+      `;
+      console.log(str4);
+      const str4A = str4.split("\n");
+      for (i in str4A) {
+        str4A[i] = str4A[i].trim();
+      }
+      console.log(str4A); // ['내가 만약', '나비라면', '훨훨', '날아갈텐데...', '']
+
+      let str4B = str4.split("\n");
+      str4B = str4B.map((v) => v.trim());
+      console.log(str4B); // ['내가 만약', '나비라면', '훨훨', '날아갈텐데...', '']
+    </script>
+  </head>
+  <body></body>
+</html>
