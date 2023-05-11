@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.266 프로토타입 연습</title>
+    <script>
+      String.prototype.ck = function (data) {
+        return this.indexOf(data) >= 0
+          ? `${this.indexOf(data) + 1}번째에 있어요^^`
+          : "없네요ㅜㅜ";
+      };
+      const str = "안녕하세요";
+      console.log(str.ck("하세")); // 3번째에 있어요^^
+      console.log(str.ck("몰라")); // 없네요ㅜㅜ
+
+      Array.prototype.ct = function (data) {
+        return this.indexOf(data) >= 0 ? "있어요^^" : "없네요ㅜㅜ";
+      };
+      const arr = [11, 22, 33, 44, 55, 66, 77, 99];
+      console.log(arr.ct(11)); // 있어요^^
+      console.log(arr.ct(133)); // 없네요ㅜㅜ
+      console.log(arr.ct(44)); // 있어요^^
+      console.log(arr.ct(88)); // 없네요ㅜㅜ
+    </script>
+  </head>
+  <body></body>
+</html>
