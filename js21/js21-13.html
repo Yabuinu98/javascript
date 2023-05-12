@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.302 전개연산자를 사용해 전개 부분 뒤로 이동하기</title>
+    <script>
+      const 구름 = {
+        이름: "구름",
+        나이: 6,
+        종족: "강아지",
+      };
+      const 별 = {
+        이름: "별",
+        나이: 1,
+        예방접종: true,
+        ...구름, // 구름이라는 객체가 앞에를 덮어 씀 / 별 = {이름:별, 나이:1, 예방접종:true} => 별 {이름:별->구름, 나이:1->6, 예방접종:true는 변동x, 종족이 별개체 없었으므로 추가!!}
+      };
+
+      console.log(JSON.stringify(구름)); // {"이름":"구름","나이":6,"종족":"강아지"}
+      console.log(JSON.stringify(별)); // {"이름":"구름","나이":6,"예방접종":true,"종족":"강아지"}
+    </script>
+  </head>
+  <body></body>
+</html>

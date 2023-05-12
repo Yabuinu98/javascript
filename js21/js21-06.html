@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.293 기본 속성 지정하기</title>
+    <script>
+      const obj = {
+        name: "혼자 공부하는 파이썬",
+        price: 18000,
+        publisher: "한빛미디어",
+      };
+
+      obj.name = obj.name !== undefined ? obj.name : "제목 미정";
+      obj.author = obj.author !== undefined ? obj.author : "저자 미상"; // 원래 객체에 author은 없기 때문에 지정값으로 추가!!!
+
+      console.log(JSON.stringify(obj, null, 2)); // 원래 객체에 author가 추가된걸 확인할 수 있음!!!
+    </script>
+  </head>
+  <body></body>
+</html>

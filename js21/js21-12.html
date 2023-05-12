@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.300 전개연산자를 사용해 변경하고픈 속성만 변경하기</title>
+    <script>
+      const 구름 = {
+        이름: "구름",
+        나이: 6,
+        종족: "강아지",
+      };
+      const 별 = {
+        ...구름, // 원본(구름)을 불러옴
+        이름: "별", // 원본(구름)에 속성 덮어 쓰기 => 이름 속성이 변경(구름 -> 별)
+        나이: 1, // 원본(구름)에 속성 덮어 쓰기 => 나이 속성이 변경(6 -> 1)
+        예방접종: true, // 원본에 없기 때문에 추가!!
+      };
+
+      console.log(JSON.stringify(구름)); // {"이름":"구름","나이":6,"종족":"강아지"}
+      console.log(JSON.stringify(별)); // {"이름":"별","나이":1,"종족":"강아지","예방접종":true}
+    </script>
+  </head>
+  <body></body>
+</html>

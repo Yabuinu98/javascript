@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.296 얕은복사=원본손상</title>
+    <script>
+      const 물건_200301 = ["우유", "식빵"];
+      const 물건_200302 = 물건_200301;
+      물건_200302.push("고구마");
+      물건_200302.push("토마토");
+
+      console.log(물건_200301); // ['우유', '식빵', '고구마', '토마토'] / 원본 손상 물건_200302가 물건_200301를 가르키기 때문(복사x, 경로를 찍는 느낌)
+
+      console.log(물건_200302); // ['우유', '식빵', '고구마', '토마토']
+    </script>
+  </head>
+  <body></body>
+</html>

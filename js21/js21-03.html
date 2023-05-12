@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.285 _.sortBy() 메소드</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+      const books = [
+        {
+          name: "혼자 공부하는 파이썬",
+          price: 18000,
+          publisher: "한빛미디어",
+        },
+        {
+          name: "HTML5 웹 프로그래밍 입문",
+          price: 26000,
+          publisher: "한빛아카데미",
+        },
+        {
+          name: "머신 딥러닝 실전 개발 입문",
+          price: 30000,
+          publisher: "위키북스",
+        },
+        {
+          name: "딥러닝을 위한 수학",
+          price: 26000,
+          publisher: "위키북스",
+        },
+      ];
+
+      /* 책 예제 */
+      // const output = _.sortBy(books, (book) => book.price);
+      // console.log(JSON.stringify(output, null, 2));
+
+      /* 예제2 */
+      const arr1 = _.orderBy(books, ["name"], ["asc"]); // asc:오름차순
+      const arr2 = _.orderBy(books, ["name"], ["desc"]); // desc:내림차순
+      const arr3 = _.orderBy(books, (x) => x.name);
+      const arr4 = _.orderBy(books, ["price", "name"], ["desc", "asc"]); // 우선 돈으로 정렬 후 이름으로 정렬
+      console.log(arr1);
+      console.log(arr2);
+      console.log(arr3);
+      console.log(arr4);
+    </script>
+  </head>
+  <body></body>
+</html>
