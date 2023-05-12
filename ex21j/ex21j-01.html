@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열을 오브젝트로 문제</title>
+    <script>
+      const arr = [
+        "밥먹자",
+        "뛰놀자",
+        "공부하자",
+        "잠자자",
+        "춤추자",
+        "게임하자",
+        "사귀자",
+      ];
+      const key = ["식사", "플레이", "스터디", "수면", "춤", "오락", "연인"];
+
+      // 위 두 배열(arr, key)을 하나의 오브젝트(obj)로 만들어라
+      let obj = {};
+      arr.forEach((v, i) => {
+        obj[key[i]] = v;
+      });
+      /* forEach구문 설명
+        1. obj{}에 arr배열의 값(v)을 추가할거임 => arr.forEach구문 사용하기
+        2. obj[속성] = 값 => 속성에 값이 있으면 변경이고, 빈 속성이면 '속성:값'이 추가됨 이건 p.246 & js21을 보도록...
+        3. 값이 추가되긴 할건데 key배열(속성)에 맞게 obj가 obj = {key:arr, ...} 나와야함
+        4. obj[ "속성 = key[i]" ] = "값 = arr의 값 = v" 
+        5. 부드럽게 만들면 = obj[key[i]] = v
+        */
+
+      /* 방법2 */
+      for (let i = 0; i < arr.length; i++) obj[key[i]] = arr[i];
+      console.log(obj);
+      // 결과 : {식사: '밥먹자', 플레이: '뛰놀자', 스터디: '공부하자', 수면: '잠자자', 춤: '춤추자', …} (맞게 나옴)
+
+      /* 객체로 바꼇나 확인해보기 */
+      console.log(obj.식사); // 밥먹자
+      console.log(obj.스터디); // 공부하자
+      console.log(obj.연인); // 사귀자
+    </script>
+  </head>
+  <body></body>
+</html>
