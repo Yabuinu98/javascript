@@ -9,8 +9,8 @@
         const a = prompt('과일입력')
         const b = prompt('추가하고픈 과일입력')
         const fur = ['딸기','바나나','사과','수박','배','키위','복숭아','포도']
-        fur.splice(fur.indexOf(a),1)
-        fur.splice(fur.length-2,0,b)
+        fur.splice(fur.indexOf(a),1) // 입력과일 잘라내기
+        fur.splice(fur.length-2,0,b) // 뒤에서 2번째 자리에 과일 추가
         document.write(`<h1> ${fur} </h1>`)
         
     </script>
