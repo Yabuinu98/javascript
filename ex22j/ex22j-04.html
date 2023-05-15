@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다른방식 풀어보기</title>
+    <script src="./js/ex22j.js"></script>
+    <script>
+        /* 다운로드된 json 파일을 */
+      // 1. 변환  JSON ->  js object
+      // 2. 추출 "id, name,  username , e-mail, city , phone"
+      // 3. 배열로 전환, username -> 배열, city -> 배열
+      console.log(obj);
+      const id = obj.map(v => v.id)
+      const name = obj.map(v => v.name)
+      const username = obj.map(v => v.username)
+      const email = obj.map(v => v.email)
+      const city = obj.map(v => v.address.city)
+      const phone = obj.map(v => v.phone)
+      console.log(id);
+      console.log(name);
+      console.log(username);
+      console.log(email);
+      console.log(city);
+      console.log(phone);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
