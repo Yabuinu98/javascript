@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오브젝트를 배열로 나누기</title>
+    <script src="./js/ex22j.js"></script>
+    <script>
+      /* 다운로드된 json 파일을 */
+      // 1. 변환  JSON ->  js object
+      // 2. 추출 "id, name,  username , e-mail, city , phone"
+      // 3. 배열로 전환, username -> 배열, city -> 배열
+      console.log(obj);
+      const id = [];
+      const name = [];
+      const username = [];
+      const email = [];
+      const city = [];
+      const phone = [];
+      for (let i = 0; i < 10; i++) {
+        const json = obj[i];
+        if (json.id !== undefined) {
+          id.push(json.id);
+        }
+        if (json.name !== undefined) {
+          name.push(json.name);
+        }
+        if (json.username !== undefined) {
+          username.push(json.username);
+        }
+        if (json.email !== undefined) {
+          email.push(json.email);
+        }
+        if (json.address.city !== undefined) {
+          city.push(json.address.city);
+        }
+        if (json.phone !== undefined) {
+          phone.push(json.phone);
+        }
+      }
+      console.log(`id는 [${id}]`);
+      console.log(`name은 [${name}]`);
+      console.log(`username은 [${username}]`);
+      console.log(`email은 [${email}]`);
+      console.log(`city는 [${city}]`);
+      console.log(`phone은 [${phone}]`);
+    </script>
+  </head>
+  <body></body>
+</html>
