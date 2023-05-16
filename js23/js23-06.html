@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.321 문서객체 이동하기</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const divA = document.querySelector("#first"); // first id를 가지는 모든걸 선택
+        const divB = document.querySelector("#second"); // second id를 가지는 모든걸 선택
+        const h1 = document.createElement("h1"); // h1 태그를 생성
+        h1.textContent = "이동하는 h1태그"; // 생성한 h1 태그에 내용 추가
+
+        const toFirst = () => {
+          divA.appendChild(h1);
+          setTimeout(toSecond, 1 * 1000); // toSecond 함수를 1초후 실행
+        };
+        const toSecond = () => {
+          divB.appendChild(h1);
+          setTimeout(toFirst, 10 * 1000); // toFirst 함수를 10초후 실행
+        };
+        toFirst();
+      });
+    </script>
+  </head>
+  <body>
+    <!-- div#first>h1^hr+div#second>h1 -->
+    <div id="first">
+      <h1>첫 번째 div 태그 내부</h1>
+    </div>
+    <hr />
+    <div id="second">
+      <h1>두 번째 div 태그 내부</h1>
+    </div>
+  </body>
+</html>

@@ -20,12 +20,24 @@
       const phone = [];
       for (let i = 0; i < 10; i++) {
         const json = obj[i];
-        if (json.id !== undefined) {id.push(json.id);}
-        if (json.name !== undefined) {name.push(json.name);}
-        if (json.username !== undefined) {username.push(json.username);}
-        if (json.email !== undefined) {email.push(json.email);}
-        if (json.address.city !== undefined) {city.push(json.address.city);}
-        if (json.phone !== undefined) {phone.push(json.phone);}
+        if (json.id !== undefined) {
+          id.push(json.id);
+        }
+        if (json.name !== undefined) {
+          name.push(json.name);
+        }
+        if (json.username !== undefined) {
+          username.push(json.username);
+        }
+        if (json.email !== undefined) {
+          email.push(json.email);
+        }
+        if (json.address.city !== undefined) {
+          city.push(json.address.city);
+        }
+        if (json.phone !== undefined) {
+          phone.push(json.phone);
+        }
       }
       console.log(id);
       console.log(name);
@@ -33,12 +45,6 @@
       console.log(email);
       console.log(city);
       console.log(phone);
-      // console.log(`id는 [${id}]`);
-      // console.log(`name은 [${name}]`);
-      // console.log(`username은 [${username}]`);
-      // console.log(`email은 [${email}]`);
-      // console.log(`city는 [${city}]`);
-      // console.log(`phone은 [${phone}]`);
     </script>
   </head>
   <body></body>

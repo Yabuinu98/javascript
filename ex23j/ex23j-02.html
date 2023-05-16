@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서 객체 스크립트 문제 2</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        /* 우선 생성하기 */
+        const div1 = document.createElement("div");
+        const div2 = document.createElement("div");
+        const span1 = document.createElement("span"); // 큰 span 1
+        const br = document.createElement("br");
+        const span2 = document.createElement("span"); // 큰 span 2
+        const span3 = document.createElement("span"); // div1 안에 있는 span
+        const span4 = document.createElement("span"); // div1 안에 있는 span
+        const ol = document.createElement("ol");
+        const li1 = document.createElement("li"); // div2 안에 있는 li
+        const li2 = document.createElement("li"); // div2 안에 있는 li
+        const li3 = document.createElement("li"); // div2 안에 있는 li
+        const a1 = document.createElement("a"); // span1 안에있는 a
+        const a2 = document.createElement("a"); // span1 안에있는 a
+
+        /* 자리 배정해주기 */
+        document.body.appendChild(div1);
+        document.body.appendChild(div2);
+        document.body.appendChild(span1);
+        document.body.appendChild(br);
+        document.body.appendChild(span2);
+        div1.appendChild(span3);
+        div1.appendChild(span4);
+        div2.appendChild(ol);
+        ol.appendChild(li1);
+        ol.appendChild(li2);
+        ol.appendChild(li3);
+        span1.appendChild(a1);
+        span2.appendChild(a2);
+
+        /* 그 외(속성 or 값 지정) */
+        span3.textContent = "1. 문서객체 생성하기";
+        span4.textContent = "그리고 추가하기";
+        li1.textContent = "생성하고(장전)";
+        li2.textContent = "추가하고(겨냥)";
+        li3.textContent = "문서읽고(격발)";
+        a1.textContent = "네이버";
+        a2.textContent = "다음";
+        div1.setAttribute("class", "c1");
+        div2.setAttribute("class", "c2");
+        a1.setAttribute("href", "hrrps://www.naver.com");
+        a21.setAttribute("href", "hrrps://www.daum.net");
+      });
+    </script>
+  </head>
+  <body>
+    <!-- div.c1>span{1.문서객체 생성하기}+span{그리고 추가하기}^div.c2>ol>li{$}*3^^span>a^br+span>a -->
+    <!-- <div class="c1">
+      <span>1.문서객체 생성하기</span><span>그리고 추가하기</span>
+    </div>
+    <div class="c2">
+      <ol>
+        <li>생성하고(장전)</li>
+        <li>추가하고(겨냥)</li>
+        <li>문서읽고(격발)</li>
+      </ol>
+    </div>
+    <span><a href="https://www.naver.com">네이버</a></span
+    ><br />
+    <span><a href="https://www.daum.net">다음</a></span> -->
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.320 문서 객체 생성하기</title>
+    <script>
+      //   document.addEventListener("DOMContentLoaded", () => {
+      //     const div = document.createElement("div"); // div태그를 생성하라!!
+      //     console.log(div); // <div></div>
+      //     document.body.appendChild(div); // body안에 div태그를 생성하라
+      //   });
+      document.addEventListener("DOMContentLoaded", () => {
+        const h1 = document.createElement("h1");
+        h1.textContent = "문서 객체 동적 생성하기";
+        h1.setAttribute("data-custom", "사용자 정의 속성"); // 속성 추가하기
+        h1.setAttribute("id", "set-id"); // 속성 추가하기
+        h1.setAttribute("class", "header"); // 속성 추가하기
+        h1.style.color = "white";
+        h1.style.backgroundColor = "black";
+        document.body.appendChild(h1);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

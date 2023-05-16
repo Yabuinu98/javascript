@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.318 스타일 조작하기</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const divs = document.querySelectorAll("div"); // div태그들의 유사 배열화
+
+        divs.forEach((v, i) => {
+          console.log(v, i);
+          const val = i * 10;
+          v.style.height = "20px";
+          v.style.backgroundColor = `rgba(${val}, ${val}, ${val})`;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </body>
+</html>

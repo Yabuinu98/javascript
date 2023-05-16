@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.313 .querySelectorAll복습</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const headers = document.querySelectorAll("h1"); // h1 태그들을 유사배열로 만들어라
+
+        headers.forEach((header) => {
+          // headers라는 유사배열의 값들을 (header)로 불러올건데
+          header.textContent = "headers"; // header값을 'headers'로 해라
+          header.style.color = "white"; // header는 흰글씨
+          header.style.backgroundColor = "black"; // header는 검은 배경
+          header.style.padding = "10px"; // header는 여백 10px
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+  </body>
+</html>
