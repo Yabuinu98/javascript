@@ -7,18 +7,18 @@
     <title>querySelectorAll 문제</title>
     <script>
       // 홀수는 빨간색 짝수 글자는 파란색으로 칠하라
-    //   document.addEventListener("DOMContentLoaded", () => {
-    //     const header = document.querySelectorAll("h1"); // h1태그들을 배열로 활용하겟다
-    //     for (let i = 0; i < header.length; i++) {
-    //       header[i].innerHTML = `<mark><em>${i + 1}</em></mark>`; // h1태그 안에 mark태그로 감싸진 em태그를 추가한다
-    //       const mk = document.querySelectorAll("mark"); // mark태그를 싹다 잡아주겟다 => 10번째까지 적용 / querySelector("mark")를 할시 => 1번째만 적용
-    //       if (i % 2 == 0) {
-    //         mk[i].style.color = "red"; // mark태그 부분에만 css 적용
-    //       } else {
-    //         mk[i].style.color = "blue"; // mark태그 부분에만 css 적용
-    //       }
-    //     }
-    //   });
+      //   document.addEventListener("DOMContentLoaded", () => {
+      //     const header = document.querySelectorAll("h1"); // h1태그들을 배열로 활용하겟다
+      //     for (let i = 0; i < header.length; i++) {
+      //       header[i].innerHTML = `<mark><em>${i + 1}</em></mark>`; // h1태그 안에 mark태그로 감싸진 em태그를 추가한다
+      //       const mk = document.querySelectorAll("mark"); // mark태그를 싹다 잡아주겟다 => 10번째까지 적용 / querySelector("mark")를 할시 => 1번째만 적용
+      //       if (i % 2 == 0) {
+      //         mk[i].style.color = "red"; // mark태그 부분에만 css 적용
+      //       } else {
+      //         mk[i].style.color = "blue"; // mark태그 부분에만 css 적용
+      //       }
+      //     }
+      //   });
 
       document.addEventListener("DOMContentLoaded", () => {
         const h1 = document.querySelectorAll("h1");
