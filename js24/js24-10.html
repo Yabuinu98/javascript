@@ -17,9 +17,9 @@
           star.style.top = `${y * block}px`;
         };
         print();
-        // const [left, up, right, down] = [37, 38, 39, 40];
+        const [left, up, right, down] = ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"];
         document.body.addEventListener("keydown", (event) => {
-          switch (event.keyCode) {
+          switch (event.key) {
             case left:
               x -= 1;
               break;
