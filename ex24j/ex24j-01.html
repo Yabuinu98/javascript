@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const div1 = document.createElement("div");
+        const div2 = document.createElement("div");
+        const div3 = document.createElement("div");
+        const h1 = document.createElement("h1");
+        // document.body.append(div1, div2, div3); // append는 한꺼번에 body안에 넣기 가능하지만 return값이 없다
+        // document.body.appendChild(div1) // appendChild는 한번에 body안에 하나만 넣을 수 있지만 / 값이 return된다(=체이닝이 된다)
+        const test = document.body.appendChild(div1).append(h1);
+        h1.textContent = "메소드체이닝";
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

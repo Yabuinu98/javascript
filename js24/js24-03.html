@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.323 이벤트연결하기(body생략버전)</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let ct = 0;
+        const h1 = document.createElement("h1");
+        document.body.appendChild(h1); // 검사해보면 <h1></h1> 생성 되있음 근데 내용이 안들어감
+        h1.textContent = `클릭횟수 : ${ct}`; // 클릭하려면 트리거 역할을 하는 친구가 있어야함
+        /* 단순 트리거가 필요하다면 높이, 너비 색만 줘도되지않을까? => 된다 but 아무것도 안주면 안됨 */
+        // h1.style.height = "100px";
+        // h1.style.width = "100px";
+        // h1.style.backgroundColor = "red";
+        h1.style.userSelect = "none"; // 함수 안에 이중선언해줄 필요 없음 => h1태그의 속성부여기 때문에
+        h1.addEventListener("click", () => {
+          ct++;
+          h1.textContent = `클릭횟수 : ${ct}`;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- <h1>클릭횟수 : 0</h1> -->
+  </body>
+</html>

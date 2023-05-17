@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.324 이벤트연결제거</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let counter = 0;
+        let isConnect = false; // 첫 함수를 실행하기 위해서 false를 지정
+        const h1 = document.querySelector("h1"); // h1태그들을 골라라
+        const p = document.querySelector("p"); // p태그들을 골라라
+        const connectButton = document.querySelector("#connect"); // id가 connect인 것을 골라라(연결 버튼이 선택됨)
+        const disconnectButton = document.querySelector("#disconnect"); // id가 connect인 것을 골라라(해제 버튼이 선택됨)
+
+        const listener = () => {
+          h1.textContent = `클릭횟수 : ${counter++}`; // 클릭할때마다 1씩 올라가라
+        };
+
+        connectButton.addEventListener("click", () => {
+          if (isConnect === false) {
+            h1.addEventListener("click", listener); // h1태그가 클릭이되면 listener이 실행되라
+            p.textContent = "이벤트 연결 상태 : 연결"; // p태그가 "이벤트 연결 상태 : 연결"로 바껴라
+            isConnect = true; // isConnect의 값이 true로 바껴라 => 아래 함수 실행하기 위해서
+          }
+        });
+        disconnectButton.addEventListener("click", () => {
+          if (isConnect === true) {
+            h1.removeEventListener("click", listener); // h1태그가 클릭이되도 listener를 실행하지마라
+            p.textContent = "이벤트 연결 상태 : 해제"; // p태그가 "이벤트 연결 상태 : 해제"로 바껴라
+            isConnect = false; // isConnect의 값이 false로 바껴라 => 다시 위에 함수 실행하기 위해서
+          }
+        });
+      });
+    </script>
+    <style>
+      h1 {
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>클릭횟수 : 0</h1>
+    <button id="connect">이벤트 연결</button>
+    <button id="disconnect">이벤트 제거</button>
+    <p>이벤트 연결 상태 : 해제</p>
+  </body>
+</html>
