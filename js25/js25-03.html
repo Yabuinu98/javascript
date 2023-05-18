@@ -10,10 +10,17 @@
         const input = document.getElementsByTagName("input");
         const button = document.getElementsByTagName("button");
         const p = document.getElementsByTagName("p");
-        button.addEventListener("click", () => {
-          const dollar = Number(input.value);
+        
+        /* 유사배열로 담김 */
+        console.log(input) 
+        console.log(button) 
+        console.log(p)
+        
+        /* 태그명[0]으로 풀어야함 태그명.mathod쓰면 배열안에 있기 때문에 안나옴... */
+        button[0].addEventListener("click", () => {
+          const dollar = Number(input[0].value);
           const won = dollar * 1300;
-          p.textContent = `${won}원`;
+          p[0].textContent = `${won}원`;
         });
       });
     </script>
