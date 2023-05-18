@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>달러 -> 원화 환전</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const input = document.getElementsByTagName("input");
+        const button = document.getElementsByTagName("button");
+        const p = document.getElementsByTagName("p");
+        button.addEventListener("click", () => {
+          const dollar = Number(input.value);
+          const won = dollar * 1300;
+          p.textContent = `${won}원`;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="text" />달러
+    <hr />
+    <button>환전</button>
+    <hr />
+    <p></p>
+  </body>
+</html>
