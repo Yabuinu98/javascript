@@ -7,13 +7,16 @@
     <title>p.315 속성조작하기</title>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const imgs = document.createElement("img");
-        document.body.appendChild(imgs);
-        imgs.forEach((v, i) => {
+        for (let i = 0; i < 5; i++) {
+          const imgs = document.createElement("img");
+          document.body.appendChild(imgs);
           const width = (i + 1) * 100;
           const src = `https://placekitten.com/${width}/${width}`;
-          v.setAttribute("src", src); // v.src = src;
-        });
+          imgs.setAttribute("src", src);
+          imgs.addEventListener("contextmenu", (event) => {
+            event.preventDefault(); // 이미지 복사 저장 막는법
+          });
+        }
       });
     </script>
   </head>

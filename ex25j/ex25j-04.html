@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getElementBy</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        /* 선택자 추가설명 */
+        // .querySelector(" ")
+        // .querySelectorAll(" ") -> NodeList 이름의 유사배열 // foreach 사용가능
+        // .getElementBy ~
+        // .getElementsBy ~ -> HTMLCollection 이름의 유사배열 // foreach 사용불가능
+
+        /* 편의성 중시(.querySelector) */
+        const all = document.querySelectorAll("div");
+        const c1 = document.querySelector(".c1");
+        const i1 = document.querySelector("#i1");
+
+        /* 속도면 중시(.getElementBy ~) */
+        const tag = document.getElementsByTagName("div"); // 배열 HTMLCollection(5) / foreach 사용 불가능
+        const name = document.getElementsByName("text1"); // 배열 NodeList(2) / foreach 사용가능
+        const c2 = document.getElementsByClassName("c2"); // 배열 HTMLCollection(2) / foreach 사용 불가능
+        const i2 = document.getElementById("i2");
+
+        console.log(all); // NodeList(5) [div.c1, div#i1, div.c2, div#i2, div.c2]
+
+        console.log(c1); // <div class="c1"></div>
+
+        console.log(i1); // <div id="i1"></div>
+
+        console.log(tag); // HTMLCollection(5) [div.c1, div#i1, div.c2, div#i2, div.c2, i1: div#i1, i2: div#i2]
+
+        console.log(name); // NodeList(2) [textarea, textarea]
+
+        console.log(c2); // HTMLCollection(2) [div.c2, div.c2]
+
+        console.log(i2); // <div id="i2"></div>
+      });
+    </script>
+  </head>
+  <body>
+    <!-- div.c1>div#i1^div.c2>div#i2 -->
+    <div class="c1">
+      <div id="i1"></div>
+    </div>
+    <div class="c2">
+      <div id="i2"></div>
+    </div>
+    <div class="c2"></div>
+    <textarea name="text1" id="" cols="30" rows="10"></textarea>
+    <textarea name="text1" id="" cols="30" rows="10"></textarea>
+  </body>
+</html>

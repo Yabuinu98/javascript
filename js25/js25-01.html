@@ -15,6 +15,10 @@
 
       document.addEventListener("DOMContentLoaded", () => {
         let ct = 0;
+        let [a, b] = [
+          Math.floor(Math.random() * 400),
+          Math.floor(Math.random() * 400),
+        ];
 
         // 바디 내용 삭제 & 임의의 랜덤 Circle생성 & 스코어 보드판생성
         const h1 = document.createElement("h1"); // 바디내용삭제
@@ -27,34 +31,22 @@
         document.body.appendChild(h2);
 
         // 속성 & 값 배정
-        document.body.style.height = "400px";
-        document.body.style.width = "400px";
         div.textContent = `현재 당신의 점수는 : ${ct}`;
         div.style.marginLeft = "200px";
         h1.textContent = "★";
         h1.style.position = "absolute";
         h2.textContent = "☆";
-        // h2.style.position = "absolute";
+        h2.style.position = "absolute";
 
         // 별을 움직이게 해주는 원
         let [x, y] = [0, 0];
-        let [a, b] = [
-          Math.floor(Math.random() * 400),
-          Math.floor(Math.random() * 400),
-        ];
         const block = 1;
-        const print = () => {
+        const print1 = () => {
           h1.style.left = `${x * block}px`;
           h1.style.top = `${y * block}px`;
           console.log([x, y]);
         };
-        const print2 = () => {
-          h2.style.left = `${a * block}px`;
-          h2.style.top = `${b * block}px`;
-          console.log([a, b]);
-        };
-        print();
-        print2();
+        print1();
         document.body.addEventListener("keydown", (event) => {
           switch (event.key) {
             case "ArrowLeft":
@@ -76,11 +68,8 @@
         // 나머지
         for (let i = 0; i < 500000; i++) {
           if ([a, b] === [x, y]) {
-            div.textContent = `현재 당신의 점수는 : ${(ct += 1)}`;
-            // let [a, b] = [
-            //   Math.floor(Math.random() * 200),
-            //   Math.floor(Math.random() * 200),
-            // ];
+            ct++;
+            div.textContent = `현재 당신의 점수는 : ${ct}`;
             h2.style.position = "absolute";
             break;
           }

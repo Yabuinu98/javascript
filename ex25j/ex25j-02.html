@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event 타겟</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        function fn(event) {
+          console.log(event);
+          console.log(event.value); // undefined
+          console.log(event.target); // <span>테스트용 버튼</span>
+          console.log(event.currentTarget); // <button><span>테스트용 버튼</span></button>
+        }
+        const button = document.querySelector("button");
+        button.addEventListener("click", fn);
+        //   event.currentTarget;
+        //   event.target;
+      });
+    </script>
+  </head>
+  <body>
+    <div class="test1">
+      <button>
+        <span>테스트용 버튼</span>
+      </button>
+    </div>
+  </body>
+</html>
