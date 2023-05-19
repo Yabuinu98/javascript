@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.344 multiple select 태그</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const select = document.createElement("select");
+        const p = document.createElement("p");
+        const op1 = document.createElement("option");
+        const op2 = document.createElement("option");
+        const op3 = document.createElement("option");
+        const op4 = document.createElement("option");
+        document.body.appendChild(select).append(op1, op2, op3, op4);
+        document.body.appendChild(p);
+        select.setAttribute("multiple", "");
+        op1.textContent = "떡볶이";
+        op2.textContent = "순대";
+        op3.textContent = "오뎅";
+        op4.textContent = "튀김";
+
+        select.addEventListener("change", (event) => {
+          const options = event.currentTarget.options;
+          const list = [];
+          for (const option of options) {
+            if (option.selected) {
+              list.push(option.textContent);
+            }
+          }
+          p.textContent = `선택 : ${list.join(",")}`; // join이 뭘까용?...
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

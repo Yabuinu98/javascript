@@ -4,23 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>달러 -> 원화 환전</title>
+    <title>달러 -> 원화 환전(p.339 응용 예제)</title>
     <script>
+      // document.querySelector 쓰지말고 getElementBy ~ 로 풀기
       document.addEventListener("DOMContentLoaded", () => {
         const input = document.getElementsByTagName("input");
         const button = document.getElementsByTagName("button");
         const p = document.getElementsByTagName("p");
-        
+
         /* 유사배열로 담김 */
-        console.log(input) 
-        console.log(button) 
-        console.log(p)
-        
+        console.log(input);
+        console.log(button);
+        console.log(p);
+
         /* 태그명[0]으로 풀어야함 태그명.mathod쓰면 배열안에 있기 때문에 안나옴... */
         button[0].addEventListener("click", () => {
           const dollar = Number(input[0].value);
-          const won = dollar * 1300;
-          p[0].textContent = `${won}원`;
+          const won = (dollar * 1300).toLocaleString("ko-KR");
+          p[0].textContent = `${won}원`; // 콤마 찍기 연습!!!
         });
       });
     </script>

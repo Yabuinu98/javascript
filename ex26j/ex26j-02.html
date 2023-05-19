@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cssText의 속성을 알아보기</title>
+  </head>
+  <body>
+    <h1 style="font-weight: bold; text-align: end">
+      cssText의 속성을 알아보기
+    </h1>
+    <button>넣기 버튼</button>
+    <button>반환 버튼</button>
+    <script>
+      const h1 = document.getElementsByTagName("h1");
+      const p = document.getElementsByTagName("p");
+      const btn = document.getElementsByTagName("button");
+      btn[0].addEventListener("click", () => {
+        h1[0].style.cssText =
+          "color: #32a4a4;font-size: 2em;text-decoration: underline;";
+      });
+      btn[1].addEventListener("click", () => {
+        p[0].innerHTML = h1[0].style.cssText;
+      });
+    </script>
+  </body>
+</html>

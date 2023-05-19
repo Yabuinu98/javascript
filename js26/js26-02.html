@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.341 이메일 형식 확인하기</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const input = document.querySelector("input"); // <input type="text" />
+        const p = document.querySelector("p"); // <p></p>
+
+        const isEmail = (value) => {
+          // p.textContent 전까지 일단 value가 없음 input 값만 가지고 놀겟다 선언...
+          return value.indexOf("@") > 1 && value.split("@")[1].indexOf(".") > 1;
+          /* value.indexOf("@") > 1 && value.split("@")[1].indexOf(".") > 1; 이해하기 */
+          // value.indexOf("@") > 1 : @ 기준 앞자리가 2글자 이상인가요?
+          // value.split("@")[1].indexOf(".") > 1 : @ 기준으로 잘라서 [1]=뒷자리 / 뒤자리의 .이 2글자있고 나서 있나요?
+        };
+
+        input.addEventListener("keyup", (event) => {
+          const value = event.currentTarget.value;
+          if (isEmail(value)) {
+            p.style.color = "green";
+            p.textContent = `이메일 형식입니다 : ${value}`;
+          } else {
+            p.style.color = "red";
+            p.textContent = `이메일 형식이 아닙니다 : ${value}`;
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="text" />
+    <p></p>
+  </body>
+</html>

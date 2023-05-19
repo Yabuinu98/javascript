@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.343 기본 select태그</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const slt = document.createElement("select");
+        const p = document.createElement("p");
+        const op1 = document.createElement("option");
+        const op2 = document.createElement("option");
+        const op3 = document.createElement("option");
+        const op4 = document.createElement("option");
+        document.body.appendChild(slt).append(op1, op2, op3, op4);
+        document.body.appendChild(p);
+        op1.textContent = "떡볶이";
+        op2.textContent = "순대";
+        op3.textContent = "오뎅";
+        op4.textContent = "튀김";
+        p.textContent = "선택 : 떡볶이";
+
+        // 변할때마다 실행하라
+        slt.addEventListener("change", (event) => {
+          const options = event.currentTarget.options;
+          // option 태그들이 유사배열이됨 => options = [<option value="">떡볶이</option>, ..., <option value="">튀김</option>]
+          // 콘솔을 찍어보면 option[0]의 값이 <option value="">떡볶이</option> 이렇고
+          // 저안에 상세 속성에 보면 textContent : "떡볶이"라는 값을 가지고 있음
+
+          const index = event.currentTarget.options.selectedIndex; // .selectedIndex : 선택된 것의 인덱스 값 반환
+          p.textContent = `선택 : ${options[index].textContent}`; // options[0].textContent = "떡볶이"
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- <select name="" id="">
+      <option value="">떡볶이</option>
+      <option value="">순대</option>
+      <option value="">오뎅</option>
+      <option value="">튀김</option>
+    </select>
+    <p>선택 : 떡볶이</p> -->
+  </body>
+</html>
