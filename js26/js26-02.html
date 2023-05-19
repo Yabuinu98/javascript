@@ -19,13 +19,14 @@
         };
 
         input.addEventListener("keyup", (event) => {
+          // keyup 이라서 한글자 한글자 입력할때마다 실행됨
           const value = event.currentTarget.value;
           if (isEmail(value)) {
             p.style.color = "green";
             p.textContent = `이메일 형식입니다 : ${value}`;
           } else {
             p.style.color = "red";
-            p.textContent = `이메일 형식이 아닙니다 : ${value}`;
+            p.textContent = `이메일 형식이 아닙니다 : ${value}`; // 실시간 입력받는 부분을 출력
           }
         });
       });
