@@ -9,49 +9,56 @@
       document.addEventListener("DOMContentLoaded", () => {
         const text = document.querySelector("input"); // input 태그를 text에 저장
         const btn1 = document.querySelector("#add"); // <button id="add">추가하기</button>
-        const div = document.querySelector("div"); // <div id="list"></div>
+        const btn3 = document.querySelector("#reset"); // <button id="add">추가하기</button>
+        const list = document.querySelector(".list"); // <div class="list"></div>
 
-        btn1.addEventListener("click", (event) => {
-          let input = text.value; // 입력값을 사용할 준비
-          const radio = document.createElement("input"); // radio 속성의 input 태그 생성
-          const span = document.createElement("span"); // input값을 담을 span 생성
-          const btn2 = document.createElement("button"); // 제거하기 버튼 생성
-          const hr = document.createElement("hr"); // 줄바꿈 용도
-          radio.type = "radio"; // input태그 내부 속성인 radio 속성 지정
-          span.textContent = `${input}`; // span안에 입력값 담기
-          //   btn2.id = "dec";
-          btn2.textContent = "제거하기";
-          div.append(radio, span, btn2, hr);
-          todoList.appendChild(div);
+        /* 추가 버튼을 누르면 입력값이 div에 추가되도록 */
+        btn1.addEventListener("click", () => {
+            const checkbox = document.createElement("input") // radio 속성의 input태그 생성
+            const span = document.createElement("span") // 입력 값을 담을 span태그 생성
+            const btn2 = document.createElement("button") // 제거하기 버튼만들기
+            const br = document.createElement("br")
+            const input = text.value
+            checkbox.type = "checkbox"
+            span.textContent = input
+            btn2.textContent = "제거하기"
+            list.append(br, checkbox, span, btn2)
+            
+            /* 체크박스를 클릭하면 취소선 긋기 */
+            checkbox.addEventListener("click", (event) => {
+                const choose = event.currentTarget.checked
+                if(choose){
+                    span.style.textDecoration = "line-through" // css주기
+                }
+                if(!choose){
+                    span.style.textDecoration = "" // css빼기
+                }
+            })
 
-          /* 체크하면 줄생기게 하기 */
-          radio.addEventListener("change", (event) => {
-            span.style.textDecoration = event.target.checked
-              ? "line-through"
-              : "";
-          });
+            /* 제거하기 버튼을 누르면 해당 일정만 제거 */
+            btn2.addEventListener("click", (event) => {
+                list.removeChild(br)
+                list.removeChild(checkbox)
+                list.removeChild(span)
+                list.removeChild(btn2)
+            })
+        })
 
-          /* 제거하기 누르면 날아가기 */
-          btn2.addEventListener("click", (event) => {
-            // document.body.removeChild(div); // 다날아가버림
-            removeTodo(key);
-          });
-          const removeTodo = (key) => {
-            const items = document.querySelector(`[data-key = "${key}"]`);
-            todoList.removeChild(item);
-          };
-        });
-
-        btn0.addEventListener("click", (event) => {
-          location.reload();
-        });
+        /* 리셋버튼을 만들기(F5 역할) */
+        btn3.addEventListener("click", () => {
+            const lastck = confirm("정말초기화 시키시겠습니까?")
+            if(lastck){
+                location.reload()
+            }
+        })
       });
     </script>
   </head>
   <body>
     <h3>할 일 목록</h3>
     <input type="text" style="height: 20px; margin-right: 10px" />
-    <button id="add">추가하기</button>
-    <div id="list"></div>
+    <button id="add" style="margin-right: 10px;">추가하기</button>
+    <button id="reset">리셋</button>
+    <div class="list"></div>
   </body>
 </html>
