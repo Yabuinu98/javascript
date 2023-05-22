@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.340 구글 단위변환 만들어보기</title>
+  </head>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("input0");
+      const output = document.getElementById("output0");
+      const st1 = document.getElementById("gb");
+      const st2 = document.getElementById("dan1");
+      const st3 = document.getElementById("dan2");
+      const p = document.getElementsByTagName("p");
+      const two = document.getElementsByClassName("two");
+      const three = document.getElementsByClassName("three");
+
+      /* 전체 단위 선택(길이 or 부피) */
+      st1.addEventListener("change", (event) => {
+        const options = event.currentTarget.options;
+        const index = event.currentTarget.options.selectedIndex;
+        if (options[index].textContent == "길이") {
+          two[0].textContent = "m";
+          two[1].textContent = "cm";
+          three[0].textContent = "미터";
+          three[1].textContent = "센치미터";
+        }
+        if (options[index].textContent == "부피") {
+          two[0].textContent = "L";
+          two[1].textContent = "mL";
+          three[0].textContent = "리터";
+          three[1].textContent = "밀리리터";
+        }
+      });
+
+      /* 반환 파트  */
+      // input & output 상호작용하도록
+    });
+  </script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+    .all {
+      background-color: beige;
+      height: 30%;
+      width: 60%;
+      margin: 50px 0 0 50px;
+      padding: 20px;
+    }
+    #gb {
+      width: 80%;
+      height: 10%;
+      margin-bottom: 10px;
+    }
+    .mid {
+      display: flex;
+      margin: 10px 0 20px 10px;
+      width: 80%;
+      height: 50%;
+    }
+    .int {
+      background-color: antiquewhite;
+      padding: 15px;
+      width: 50%;
+    }
+    .ecole {
+      font-size: 50px;
+      width: 20%;
+      text-align: center;
+    }
+    .ch {
+      background-color: antiquewhite;
+      padding: 15px;
+      width: 50%;
+    }
+    p {
+      background-color: skyblue;
+      width: 80%;
+      height: 20%;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+    }
+  </style>
+  <body>
+    <div class="all">
+      <select name="" id="gb">
+        <option value="" class="one">길이</option>
+        <option value="" class="one">부피</option>
+      </select>
+      <div class="mid">
+        <div class="int">
+          <input type="text" id="input0" />
+          <hr />
+          <select name="" id="dan1">
+            <option value="" class="two">m</option>
+            <option value="" class="two">cm</option>
+          </select>
+        </div>
+        <div class="ecole">=</div>
+        <div class="ch">
+          <input type="text" id="output0" />
+          <hr />
+          <select name="" id="dan2">
+            <option value="" class="three">미터</option>
+            <option value="" class="three">센치미터</option>
+          </select>
+        </div>
+      </div>
+      <p>공식 : 값이 없습니다.</p>
+    </div>
+  </body>
+</html>
