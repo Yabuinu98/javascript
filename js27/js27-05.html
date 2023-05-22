@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.352 할 일 목록 만들기 예제 혼자해보기</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const text = document.querySelector("input"); // input 태그를 text에 저장
+        const btn1 = document.querySelector("#add"); // btn = add아이디를 가진것
+        const div = document.querySelector("div"); // btn = div태그들의 집합이 될 예정
+
+        btn1.addEventListener("click", (event) => {
+          let input = text.value; // 입력값을 사용할 준비
+          const radio = document.createElement("input"); // radio 속성의 input 태그 생성
+          const span = document.createElement("span"); // input값을 담을 span 생성
+          const btn2 = document.createElement("button"); // 제거하기 버튼 생성
+          const hr = document.createElement("hr"); // 줄바꿈 용도
+          radio.type = "radio"; // input태그 내부 속성인 radio 속성 지정
+          span.textContent = `${input}`; // span안에 입력값 담기
+          //   btn2.id = "dec";
+          btn2.textContent = "제거하기";
+          div.append(radio, span, btn2, hr);
+          todoList.appendChild(div);
+
+          /* 체크하면 줄생기게 하기 */
+          radio.addEventListener("change", (event) => {
+            span.style.textDecoration = event.target.checked
+              ? "line-through"
+              : "";
+          });
+
+          /* 제거하기 누르면 날아가기 */
+          btn2.addEventListener("click", (event) => {
+            // document.body.removeChild(div); // 다날아가버림
+            removeTodo(key);
+          });
+          const removeTodo = (key) => {
+            const items = document.querySelector(`[data-key = "${key}"]`);
+            todoList.removeChild(item);
+          };
+        });
+
+        btn0.addEventListener("click", (event) => {
+          location.reload();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h3>할 일 목록</h3>
+    <input type="text" style="height: 20px; margin-right: 10px" />
+    <button id="add">추가하기</button>
+    <div id="list"></div>
+  </body>
+</html>

@@ -4,7 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>TypeIt</title>
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const h1 = document.createElement("h1");
+        document.body.appendChild(h1);
+        h1.textContent = "반갑습니다. 감사합니다.";
+
+        /* 차례로 진행하기 */
+        new TypeIt(h1)
+          .pause(1000) // 1초 기다려라
+          .delete(6, { delay: 1000 }) // 6글자 삭제(.포함), 1초 기다림
+          .type("고맙습니다!!!") //고맙습니다.!!! 입력
+          .go(); // 실행하기
+      });
+    </script>
   </head>
   <body></body>
 </html>

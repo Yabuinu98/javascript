@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.351 체크 때만 링크 활성화하기</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let status = false; // 초기값(뭐가 false란 건지를 모름)
+
+        const checkbox = document.querySelector("input");
+        checkbox.addEventListener("change", (event) => {
+          status = event.currentTarget.checked; // 체크가 됬나 확인하라
+        });
+
+        const link = document.querySelector("a");
+        link.addEventListener("click", (event) => {
+          if (!status) {
+            event.preventDefault();
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="checkbox" />
+    <span>링크 활성화</span>
+    <br />
+    <a href="https://www.naver.com">네이버</a>
+  </body>
+</html>
