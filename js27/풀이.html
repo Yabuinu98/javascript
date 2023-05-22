@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>할일목록 쌤 풀이</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        /* Dom 구성 */
+        const h1 = document.createElement("h1");
+        const input = document.createElement("input");
+        const button = document.createElement("button");
+
+        document.body.append(h1, input, button);
+        h1.innerHTML = "할일목록";
+        input.setAttribute("id", "todo");
+        input.style.cssText = "height : 30px; margin-right: 10px";
+        button.innerHTML = "추가하기";
+
+        /* 입력한 부분 변수로 받기 */
+        let content = "";
+        input.addEventListener("change", (e) => {
+          content = e.target.value;
+        });
+
+        /* 동작 1단계 : 버튼을 누를때마다 하나씩 추가되기 */
+        button.addEventListener("click", (e) => {
+          if (content) {
+          }
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
