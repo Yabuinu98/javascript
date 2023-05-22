@@ -28,8 +28,8 @@
 
         // 별을 움직이게 해주는 부분
         let [x, y] = [0, 0];
-        let a = Math.floor(Math.random() * 10)
-        let b = Math.floor(Math.random() * 10)
+        let a = Math.floor(Math.random() * 10);
+        let b = Math.floor(Math.random() * 10);
         const block = 10;
         const print1 = () => {
           star.style.left = `${x * block}px`;
@@ -59,17 +59,17 @@
           print1(); // 색칠 별 이동 표시
           if (a == x && b == y) {
             score.textContent = `당신의 현재 점수는 : ${++ct}`;
-            circle.parentNode.removeChild(circle)
-            a = Math.floor(Math.random()*50)
-            b = Math.floor(Math.random()*50)
-            print2()
-            document.body.appendChild(circle)
+            circle.parentNode.removeChild(circle);
+            a = Math.floor(Math.random() * 50);
+            b = Math.floor(Math.random() * 50);
+            print2();
+            document.body.appendChild(circle);
           }
         });
         setTimeout(() => {
-          alert(`GAME OVER 당신의 최종 점수는 : ${ct}`)
-          location.reload()
-        }, 10*1000)
+          alert(`GAME OVER 당신의 최종 점수는 : ${ct}`);
+          location.reload(); // F5 기능
+        }, 10 * 1000);
       });
     </script>
   </head>
