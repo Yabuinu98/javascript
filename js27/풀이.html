@@ -11,12 +11,14 @@
         const h1 = document.createElement("h1");
         const input = document.createElement("input");
         const button = document.createElement("button");
+        const resetbutton = document.createElement("button");
 
-        document.body.append(h1, input, button);
+        document.body.append(h1, input, button, resetbutton);
         h1.innerHTML = "할일목록";
         input.setAttribute("id", "todo");
         input.style.cssText = "height : 30px; margin-right: 10px";
         button.innerHTML = "추가하기";
+        resetbutton.innerHTML = "리셋";
 
         /* 입력한 부분 변수로 받기 */
         let content = ""; // 함수 안에 선언 해버리면 함수 밖에서는 사용 불가하기 때문에 함수 밖에서 선언
@@ -25,8 +27,10 @@
         });
 
         /* 동작 1단계 : 버튼을 누를때마다 하나씩 추가되기 */
+        // ct = 0; // 삭제하기 누를때마다 div에 class 넘버링을 하기 위한 값(ct)
         button.addEventListener("click", (e) => {
           if (content) {
+            // ct++; // 삭제하기 누를때마다 div에 class 넘버링 => 0, 1, 2, 3...
             const div = document.createElement("div");
             const check = document.createElement("input");
             const span = document.createElement("span");
@@ -36,8 +40,11 @@
 
             inbutton.innerHTML = "삭제하기";
             check.type = "checkbox";
+            // check.className = ct++; // check.setAttribute("class", ct++)
             span.innerHTML = content;
-            content = "";
+            input.value = ""; // input창 비우기
+            content = ""; // 중복 입력 방지
+            // const del = document.querySelector("." + ct); // 넘버링 된 class를 선택한다(배열 x => 왜 why? : ct가 변수이므로)
 
             /* 체크 방법 1 */
             // check.addEventListener("change", (e) => {
@@ -56,10 +63,24 @@
               console.log(e.currentTarget.checked); // true
               if (e.currentTarget.checked) {
                 span.className = "check-ok";
+                /* 삭제하기 버튼 기능하게하기 */
+                inbutton.addEventListener("click", (e) => {
+                  div.parentNode.removeChild(div);
+                  // document.body.removeChild(div);
+                });
               } else {
                 span.className = "check-no";
               }
             });
+          } else {
+            alert("내용을 입력해주세요");
+          }
+        });
+
+        resetbutton.addEventListener("click", () => {
+          const ch = confirm("정말 초기화 하시겠습니까?");
+          if (ch) {
+            location.reload();
           }
         });
       });
