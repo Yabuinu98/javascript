@@ -63,17 +63,17 @@
               console.log(e.currentTarget.checked); // true
               if (e.currentTarget.checked) {
                 span.className = "check-ok";
-                /* 삭제하기 버튼 기능하게하기 */
-                inbutton.addEventListener("click", (e) => {
-                  div.parentNode.removeChild(div);
-                  // document.body.removeChild(div);
-                });
               } else {
                 span.className = "check-no";
               }
             });
+            /* 삭제하기 버튼 기능하게하기 */
+            inbutton.addEventListener("click", (e) => {
+              div.parentNode.removeChild(div);
+              // document.body.removeChild(div);
+            });
           } else {
-            alert("내용을 입력해주세요");
+            alert("내용을 입력해주세요"); // input값이 없으면 내용을 입력하라고 하기
           }
         });
 
@@ -85,16 +85,7 @@
         });
       });
     </script>
-    <style>
-      .check-ok {
-        text-decoration: line-through;
-        color: gray;
-      }
-      .check-no {
-        text-decoration: none;
-        color: black;
-      }
-    </style>
+    <link rel="stylesheet" href="./css/js28.css" />
   </head>
   <body></body>
 </html>
