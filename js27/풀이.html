@@ -39,19 +39,41 @@
             span.innerHTML = content;
             content = "";
 
+            /* 체크 방법 1 */
+            // check.addEventListener("change", (e) => {
+            //   console.log(e.currentTarget.value); // on
+            //   console.log(e.currentTarget.checked); // true
+            //   if (e.currentTarget.checked) {
+            //     span.style.textDecoration = "line-through"; // line-through 취소선 긋기
+            //   } else {
+            //     span.style.textDecoration = "none";
+            //   }
+            // });
+
+            /* 체크 방법 2 */
             check.addEventListener("change", (e) => {
               console.log(e.currentTarget.value); // on
               console.log(e.currentTarget.checked); // true
               if (e.currentTarget.checked) {
-                span.style.textDecoration = "line-through"; // line-through 취소선 긋기
+                span.className = "check-ok";
               } else {
-                span.style.textDecoration = "none";
+                span.className = "check-no";
               }
             });
           }
         });
       });
     </script>
+    <style>
+      .check-ok {
+        text-decoration: line-through;
+        color: gray;
+      }
+      .check-no {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
   </head>
   <body></body>
 </html>
