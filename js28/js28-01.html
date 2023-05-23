@@ -46,7 +46,7 @@
             content = ""; // 중복 입력 방지
             // const del = document.querySelector("." + ct); // 넘버링 된 class를 선택한다(배열 x => 왜 why? : ct가 변수이므로)
 
-            /* 체크 방법 1 */
+            /* 체크 방법 1 (css구문 주기) */
             // check.addEventListener("change", (e) => {
             //   console.log(e.currentTarget.value); // on
             //   console.log(e.currentTarget.checked); // true
@@ -57,7 +57,7 @@
             //   }
             // });
 
-            /* 체크 방법 2 */
+            /* 체크 방법 2 (className 부여해서 그걸로 css제어) */
             check.addEventListener("change", (e) => {
               console.log(e.currentTarget.value); // on
               console.log(e.currentTarget.checked); // true
