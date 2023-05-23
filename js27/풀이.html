@@ -19,7 +19,7 @@
         button.innerHTML = "추가하기";
 
         /* 입력한 부분 변수로 받기 */
-        let content = "";
+        let content = ""; // 함수 안에 선언 해버리면 함수 밖에서는 사용 불가하기 때문에 함수 밖에서 선언
         input.addEventListener("change", (e) => {
           content = e.target.value;
         });
@@ -27,6 +27,27 @@
         /* 동작 1단계 : 버튼을 누를때마다 하나씩 추가되기 */
         button.addEventListener("click", (e) => {
           if (content) {
+            const div = document.createElement("div");
+            const check = document.createElement("input");
+            const span = document.createElement("span");
+            const inbutton = document.createElement("button");
+
+            document.body.appendChild(div).append(check, span, inbutton);
+
+            inbutton.innerHTML = "삭제하기";
+            check.type = "checkbox";
+            span.innerHTML = content;
+            content = "";
+
+            check.addEventListener("change", (e) => {
+              console.log(e.currentTarget.value); // on
+              console.log(e.currentTarget.checked); // true
+              if (e.currentTarget.checked) {
+                span.style.textDecoration = "line-through"; // line-through 취소선 긋기
+              } else {
+                span.style.textDecoration = "none";
+              }
+            });
           }
         });
       });

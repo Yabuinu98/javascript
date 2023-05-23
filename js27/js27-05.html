@@ -20,8 +20,9 @@
           const br = document.createElement("br");
           const input = text.value;
           checkbox.type = "checkbox";
-          span.textContent = input;
           btn2.textContent = "제거하기";
+          span.textContent = input;
+          text.value = ""; // 값 추가하고 나서는 초기화 되라
           list.append(checkbox, span, btn2, br);
 
           /* 체크박스를 클릭하면 취소선 긋기 */
@@ -57,12 +58,17 @@
         });
       });
     </script>
+
+    <!-- css 주기 -->
+    <link rel="stylesheet" href="./css/js27.css" />
   </head>
   <body>
-    <h3>할 일 목록</h3>
-    <input type="text" style="height: 20px; margin-right: 10px" />
-    <button id="add" style="margin-right: 10px">추가하기</button>
-    <button id="reset">리셋</button>
-    <div class="list"></div>
+    <div id="all">
+      <h3>할 일 목록</h3>
+      <input type="text" style="height: 20px; margin-right: 10px" />
+      <button id="add" style="margin-right: 10px">추가하기</button>
+      <button id="reset">리셋</button>
+      <div class="list"></div>
+    </div>
   </body>
 </html>
