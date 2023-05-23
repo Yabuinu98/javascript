@@ -22,7 +22,7 @@
           checkbox.type = "checkbox";
           span.textContent = input;
           btn2.textContent = "제거하기";
-          list.append(br, checkbox, span, btn2);
+          list.append(checkbox, span, btn2, br);
 
           /* 체크박스를 클릭하면 취소선 긋기 */
           checkbox.addEventListener("click", (event) => {
@@ -37,10 +37,14 @@
 
           /* 제거하기 버튼을 누르면 해당 일정만 제거 */
           btn2.addEventListener("click", (event) => {
-            list.removeChild(br);
+            /* 왜 이건 다 지워지지? */
+            // document.body.removeChild(list);
+
+            /* 왜 해당하는 것만 지워지지? */
             list.removeChild(checkbox);
             list.removeChild(span);
             list.removeChild(btn2);
+            list.removeChild(br);
           });
         });
 
