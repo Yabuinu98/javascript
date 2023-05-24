@@ -61,18 +61,6 @@ button:hover{
     align-items: center;
     justify-content: space-between;
     /* animation: 이름 지속시간 얼마나지속할지 */
-    animation: RLmove 5s infinite ;
-}
-@keyframes RLmove{
-    0%{
-        width : 60%
-    }
-    50%{
-        width : 100%
-    }
-    100%{
-        width : 60%
-    }
 }
 span{
     font-family: 'Cute Font', cursive;
@@ -86,3 +74,6 @@ span{
     border: none;
     border-radius: 25px;
 }
+/* .check-ok{
+    transform: skew(10px, 10px);
+} */
