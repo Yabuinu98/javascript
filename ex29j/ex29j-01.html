@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>set 중복제어</title>
+    <script>
+      /* 중복을 허락하지 않음 */
+      const s1 = new Set();
+      s1.add(11);
+      s1.add(22);
+      s1.add(11); // 안 먹는다 => 중복을 허락하지 않기 때문
+      console.log("s1 size : ", s1.size); // length와 비슷하게 길이를 반환
+      console.log("s1 value : ", s1);
+
+      const arr = [1, 2, 3, 4, 5, 6, 7, 7, 5, 4, 3, 2, 2, 1, 0];
+      const s2 = new Set(arr);
+      console.log("arr value : ", arr);
+      console.log("s2 size : ", s2.size);
+      console.log("s2 value : ", s2);
+
+      const arr2 = [
+        "개",
+        "고양이",
+        "코뿔소",
+        "호랑이",
+        "쥐",
+        "소",
+        "돼지",
+        "원숭이",
+        "개",
+        "코뿔소",
+      ];
+      const s3 = new Set(arr2); // 배열인 arr2를 object로 바꿈
+      /* .has = 존재 확인 */
+      const result1 = s3.has("소");
+      const result2 = s3.has("말");
+      console.log(arr2);
+      console.log(s3);
+      console.log(result1); // true => 소는 있고
+      console.log(result2); // false => 말은 없음
+      console.log(Array.isArray(s3));
+      const array = new Array(s3); // object인 s3를 다시 배열화 시킴
+      console.log(Array.isArray(array)); // true
+
+      const arr3 = [
+        "개",
+        "고양이",
+        "코뿔소",
+        "호랑이",
+        "쥐",
+        "소",
+        "돼지",
+        "원숭이",
+        "개",
+        "코뿔소",
+      ];
+      const s4 = new Set(arr3);
+      console.log(s4);
+      /* .delete(해당 값 삭제) */
+      const del = s4.delete("쥐", "소");
+      console.log(del);
+      console.log(s4);
+
+      /* .clear(모두 삭제) */
+      const cl = s4.clear();
+      console.log(cl); // undefined
+    </script>
+  </head>
+  <body></body>
+</html>

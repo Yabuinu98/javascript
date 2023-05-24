@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>유사배열을 배열로</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const queryAll = document.querySelectorAll("div"); // NodeList
+        const getBy = document.getElementsByClassName("c1"); // HTMLCollection
+        console.log(queryAll, Array.isArray(queryAll)); // false
+        console.log(getBy, Array.isArray(getBy)); // false
+
+        /* 유사배열 -> 배열로 만들기 */
+        // 1. 전개 연산자 사용하기
+        function fn(...queryAll) {
+          console.log(queryAll); // [div.c1, div.c1, div.c1, div.c1, div.c1]
+          console.log(Array.isArray(queryAll)); // true
+          console.log(queryAll.length); // 5
+          queryAll.push("push로 추가함");
+          console.log(queryAll); // [div.c1, div.c1, div.c1, div.c1, div.c1, 'push로 추가함']
+          console.log(queryAll.length); // 6
+        }
+        fn(...queryAll);
+
+        // 2. 신문법(Array.from()) 사용하기
+        const arr1 = Array.from(queryAll);
+        const arr2 = Array.from(getBy);
+        /* push는 배열일 때 사용가능(arry가 됬는지 확인하기) */
+        arr1.push("push로추가함");
+        arr2.push("push로추가함");
+        console.log("NodeList : ", arr1, Array.isArray(arr1)); // true
+        console.log("HTMLCollection : ", arr2, Array.isArray(arr2)); // true
+      });
+    </script>
+  </head>
+  <body>
+    <div class="c1"></div>
+    <div class="c1"></div>
+    <div class="c1"></div>
+    <div class="c1"></div>
+    <div class="c1"></div>
+  </body>
+</html>
