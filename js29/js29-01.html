@@ -5,20 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>할일목록 쌤 풀이</title>
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         /* Dom 구성 */
+        const div = document.createElement("div");
         const h1 = document.createElement("h1");
         const input = document.createElement("input");
         const button = document.createElement("button");
         const resetbutton = document.createElement("button");
 
-        document.body.append(h1, input, button, resetbutton);
-        h1.innerHTML = "할일목록";
+        document.body.appendChild(div).append(h1, input, button, resetbutton);
+        div.setAttribute("class", "all");
+        h1.innerHTML = "오느루의 할이루 목로극입니다.";
         input.setAttribute("id", "todo");
         input.style.cssText = "height : 30px; margin-right: 10px";
         button.innerHTML = "추가하기";
+        button.id = "add";
         resetbutton.innerHTML = "리셋";
+        resetbutton.id = "reset";
+
+        /* Title 꾸미기 */
+        new TypeIt(h1)
+          .pause(1000)
+          .move(-13)
+          .delete(2)
+          .type("늘")
+          .move(5)
+          .delete(2)
+          .type("일")
+          .move(4)
+          .delete(2)
+          .type("록")
+          .move(null, { to: "END" })
+          .delete(6)
+          .type("꼭 할 것!!! 내일로 미루지마!!!")
+          .go();
 
         /* 입력한 부분 변수로 받기 */
         let content = "";
@@ -29,14 +51,16 @@
         /* 동작 1단계 : 버튼을 누를때마다 하나씩 추가되기 */
         button.addEventListener("click", (e) => {
           if (content) {
-            const div = document.createElement("div");
+            const divin = document.createElement("div");
             const check = document.createElement("input");
             const span = document.createElement("span");
             const inbutton = document.createElement("button");
 
-            document.body.appendChild(div).append(check, span, inbutton);
+            div.appendChild(divin).append(check, span, inbutton);
 
+            divin.setAttribute("class", "in");
             inbutton.innerHTML = "삭제하기";
+            inbutton.className = "del";
             check.type = "checkbox";
             span.innerHTML = content;
             input.value = ""; // input창 비우기
@@ -47,9 +71,11 @@
               console.log(e.currentTarget.value); // on
               console.log(e.currentTarget.checked); // true
               if (e.currentTarget.checked) {
-                span.style.textDecoration = "line-through"; // line-through 취소선 긋기
+                span.style.textDecoration = "line-through";
+                span.style.color = "red";
               } else {
                 span.style.textDecoration = "none";
+                span.style.color = "black";
               }
             });
 
@@ -63,25 +89,31 @@
                 span.className = "check-no";
               }
             });
+
             /* 삭제하기 버튼 기능하게하기 */
             inbutton.addEventListener("click", (e) => {
-              div.parentNode.removeChild(div);
-              // document.body.removeChild(div);
+              if (span.className == "check-ok") {
+                divin.parentNode.removeChild(divin);
+              } else {
+                h1.textContent = "체크박스를 체크해주세요";
+                new TypeIt(h1).go();
+              }
+            });
+
+            /* 초기화 버튼 활성화 */
+            resetbutton.addEventListener("click", () => {
+              // const ch = confirm("정말 초기화 하시겠습니까?");
+              // if (ch) {
+              divin.parentNode.removeChild(divin);
+              // }
             });
           } else {
-            alert("내용을 입력해주세요"); // input값이 없으면 내용을 입력하라고 하기
-          }
-        });
-
-        resetbutton.addEventListener("click", () => {
-          const ch = confirm("정말 초기화 하시겠습니까?");
-          if (ch) {
-            location.reload();
+            alert("내용을 입력해주세요");
           }
         });
       });
     </script>
-    <link rel="stylesheet" href="./css/js28.css" />
+    <link rel="stylesheet" href="./css/js29.css" />
   </head>
   <body></body>
 </html>
