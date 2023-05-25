@@ -10,8 +10,8 @@
       // console.log(test.data); // TypeError
       console.log(test?.data); // undefined
 
-      const obj = { 딸기: undefined };
-      const resilt = obj && obj.바나나;
+      const obj = { 딸기: "맛잇다", 수박: "달다" };
+      const resilt = obj.바나나?.length;
       console.log(resilt); // undefined
     </script>
   </head>

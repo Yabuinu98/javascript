@@ -99,16 +99,15 @@
                 new TypeIt(h1).go();
               }
             });
-
-            /* 초기화 버튼 활성화 */
-            resetbutton.addEventListener("click", () => {
-              // const ch = confirm("정말 초기화 하시겠습니까?");
-              // if (ch) {
-              divin.parentNode.removeChild(divin);
-              // }
-            });
           } else {
             alert("내용을 입력해주세요");
+          }
+        });
+        /* 초기화 버튼 활성화 */
+        resetbutton.addEventListener("click", () => {
+          const ch = confirm("정말 초기화 하시겠습니까?");
+          if (ch) {
+            location.reload();
           }
         });
       });
