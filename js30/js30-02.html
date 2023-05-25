@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>localStorage 객체</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const p = document.querySelector("p");
+        const input = document.querySelector("input");
+        const button = document.querySelector("button");
+
+        const savedValue = localStorage.getItem("input"); // input 태그의 값을 가져와라
+        // console.log(savedValue); // null(input.value느낌)
+
+        /* savedValue에 값이 있으면 */
+        if (savedValue) {
+          input.value = savedValue; // 입력값을 savedValue에 저장(=대체한다, =대입한다)한다
+          p.textContent = `이전 실행 때의 마지막 값 : ${savedValue}`; // p태그에 savedValue를 표시한다
+        }
+
+        /* input태그에 입력이 떨어질때마다 (미완성) */
+        input.addEventListener("keyup", (event) => {
+          const value = event.currentTarget.value; // 이벤트 진행중인 곳의 값 = 실시간 입력 값 = value에 담기
+          /* 실시간 입력 값을  */
+          localStorage.setItem("input", value); // localStorage.input = value
+          console.log(savedValue); //
+        });
+
+        /* 지우기 버튼을 누르면 */
+        button.addEventListener("click", (event) => {
+          localStorage.clear(); // 모두 삭제
+          input.value = ""; // input 자리를 비워라
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p></p>
+    <button>지우기</button>
+    <input type="text" />
+  </body>
+</html>
