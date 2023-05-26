@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>에러</title>
+    <script>
+      function add(a, b) {
+        console.log("if 전"); // "if 전" 출력
+        if (a == b || b == 0) {
+          console.log("에러 전"); // "에러 전" 출력
+          throw "a와 b를 같거나 혹은 b가 0인지 확인해 주세요"; // 경고창으로 "Uncaught a와 b를 같거나 혹은 b가 0인지 확인해 주세요" 출력
+          console.log("에러 후"); // throw시점 부턴 실행 x
+        }
+        console.log("if 후"); // throw시점 부턴 실행 x
+        return a + b;
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

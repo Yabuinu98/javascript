@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>try catch 구문</title>
+    <script>
+      try {
+        JSON.parse("{잘못된 형식의 JSON o_O???}");
+        // console.log("안녕하세요"); // "안녕하세요"랑 finally만 나옴
+      } catch (error) {
+        // alert(error); // SyntaxError: Expected property name or '}' in JSON at position 1
+        console.log(error); // SyntaxError: Expected property name or '}' in JSON at position 1
+        console.log(typeof error); // object
+        console.log(error.name); // SyntaxError
+        console.log(error.message); // SyntaxError: Expected property name or '}' in JSON at position 1
+      } finally {
+        console.log("전 finally에요 늘 실행이 되죠"); // 전 finally에요 늘 실행이 되죠
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
