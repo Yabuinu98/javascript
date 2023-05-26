@@ -16,7 +16,7 @@ body{
     text-align: center;
     border-radius: 20px;
     /* box-shadow: 색상 x축 y축 blur정도 */
-    box-shadow: black 20px 20px 40px;
+    box-shadow: black 20px 20px 30px;
 }
 h1{
     margin-top: -10px;
