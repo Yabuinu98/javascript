@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>try catch 구문</title>
+    <script>
+      try {
+        willExcept.bteBye(); // 예외 발생
+        throw "잘못햇어요"; // 예외 발생(사용자 정의 예외 = 오류 구문을 컨트롤 가능)
+      } catch (exception) {
+        // exception에 담겨있는 값은 "willExcept.bteBye();"" 구문의 오류구문이 떠있음
+        // 선행된 예외 부분이 있으면 그 부분의 오류 구문을 가져오는 듯
+        console.log(exception);
+        console.log(typeof exception);
+      } finally {
+        console.log("전 finally에요 늘 실행이 되죠");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
