@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section{
+    height: 100vh;
+    width: 100vw;
+    font-size: 7rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:black;
+    box-shadow: -5px 40px 15px 30px rgba(0, 0, 0, 0.578);
+    transition:1s;
+    transform: perspective(600px);
+    transform-style: preserve-3d;
+    line-height: 2;
+}
+
+section.action{
+    transform: translateZ(-100px) translateX(100px);
+    text-shadow: 10px 10px 5px white;
+
+}
+
+span {
+    margin-top: 4rem;
+    width: 100vw;
+    display:inline-block;
+    transition:1s ease-in-out;
+    opacity: 0;
+    color:white;
+    transform: perspective(600px);
+    transform-style: preserve-3d;
+}
+
+span.active{
+    opacity: 1;
+    font-size: 10rem;
+    text-shadow: 5px 5px 15px black;
+    transform: translate(100px) scale(1.1) rotateY(40deg);
+}
+
+.btnBox{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+    </style>
+  </head>
+  <body>
+    <section><span>First</span>Go</section>
+    <section><span>Second</span>Back</section>
+    <section><span>3333</span>Kite</section>
+    <section><span>44444</span>Cow</section>
+    <section><span>555555</span>Bing</section>
+<!-- 
+    <div class="btnBox">
+      <button class="prev">prev</button>
+      <button class="next">next</button>
+    </div> -->
+    <script>
+
+(() => {
+  const $section = document.querySelectorAll("section");
+  const $span = document.querySelectorAll("span");
+  const total = $section.length;
+  let background = ["red", "green", "gold", "powderblue", "tomato"];
+  let pageNum = 0;
+
+  const colorChange = () => {
+    $section[pageNum].style.background = background[pageNum];
+    action();
+  };
+
+  function action() {
+    for (let i = 0; i < total; i++) {
+      $span[i].classList.remove("active");
+      $section[i].classList.remove("action");
+    }
+    $span[pageNum].classList.add("active");
+    $section[pageNum].classList.add("action");
+  }
+
+  window.addEventListener("scroll", () => {
+    let scroll = window.scrollY;
+    for (let i = 0; i < total; i++) {
+      if (scroll > $section[i].offsetTop - window.innerHeight / 2) {
+        pageNum = i;
+        console.log(pageNum);
+        colorChange();
+      }
+    }
+  });
+})();
+
+    </script>
+  </body>
+</html>
