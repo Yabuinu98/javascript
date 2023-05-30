@@ -4,7 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>Document</title>
+    <script>
+      function fn2() {
+        console.log("fn2()의 시작");
+        throw "고의적 에러";
+        console.log("fn2()의 끝");
+      }
+      function fn1() {
+        console.log("fn1()의 시작");
+        try {
+          fn2();
+        } catch (e) {
+          console.log(e);
+        }
+        console.log("fn1()의 끝");
+      }
+      console.log("=====프로그렘 시작=======");
+      fn1();
+      console.log("=====프로그렘 끝=======");
+      /* 출력 */
+    </script>
   </head>
   <body></body>
 </html>

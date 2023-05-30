@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const num = +prompt("양의 정수를 입력해주세요.", 35); // +는 숫자로 타입을 바꿔줌
+      let diff, result;
+      function fib(n) {
+        if (n < 0 || Math.trunc(n) != n) {
+          //Math.trunc() 주어진 값의 소수부분을 제거하고 숫자의 정수부분을 반환합니다.
+          throw new Error("음수나 정수가 아닌 값은 처리할 수 없습니다.");
+        }
+        return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+        // return n;
+      }
+      let start = Date.now(); //측정시작
+
+      try {
+        result = fib(num); //연산
+      } catch (e) {
+        result = e;
+      } finally {
+        diff = Date.now() - start; //측정끝
+      }
+
+      alert(result); //결과 값 출력
+      alert(`연산시간: ${diff}ms`); //측정시간 출력
+    </script>
+  </head>
+  <body>
+    <!-- 재귀함수(再歸函數, recursion)는 정의 단계에서 자신을 재참조하는 함수를 뜻한다.  -->
+  </body>
+</html>
