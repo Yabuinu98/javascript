@@ -10,7 +10,7 @@ body{
 }
 
 /* 전체 박스 */
-.all_box{
+#all_box{
     font-family: 'Cute Font', cursive;
     width: 60%;
     margin-top: 5%;
@@ -25,7 +25,7 @@ button{
     font-family: 'Cute Font', cursive;
     font-size: 20px;
     background-color: beige;
-    height: 41px;
+    height: 40px;
     width: 80px;
     border-radius: 25px;
 }
@@ -74,4 +74,12 @@ input::placeholder{
 /* button(모두 삭제부분) */
 #clear{
     margin-right: 15px;
+}
+
+/* 일정 추가되는 파트 */
+.todo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
 }
