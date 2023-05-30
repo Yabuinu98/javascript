@@ -9,6 +9,8 @@
       function test(object) {
         console.log(object.a + object.b);
       }
+      test({ a: 3, b: 6 }); // 9
+      test({ a: "딸기는", b: " 빨갛다" }); // 딸기는 빨갛다
       test({}); // NaN
     </script>
   </head>

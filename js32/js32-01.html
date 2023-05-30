@@ -11,6 +11,7 @@
       } catch (e) {
         console.log(e); // RangeError: Invalid array length
         console.log();
+        /* 예외구문을 이름과 메세지로 나눌 수 있다(= 예괴구문 구성 => '예외이름 : 예외메세지') */
         console.log(`예외 이름 : ${e.name}`); // 예외 이름 : RangeError
         console.log(`예외 메세지 : ${e.message}`); // 예외 메세지 : Invalid array length
       }

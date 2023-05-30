@@ -14,6 +14,8 @@
           throw new Error("a 속성과 b 속성을 지정하지 않았습니다.");
         }
       }
+      test({ a: 123, b: 456 }); // 579
+      test({ a: "123", b: "456" }); // 123456
       test({}); // Uncaught Error: a 속성과 b 속성을 지정하지 않았습니다.
     </script>
   </head>
