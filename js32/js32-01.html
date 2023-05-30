@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p.377 예외 정보 출력하기</title>
+    <script>
+      try {
+        const array = new Array(9999999999999999);
+      } catch (e) {
+        console.log(e); // RangeError: Invalid array length
+        console.log();
+        console.log(`예외 이름 : ${e.name}`); // 예외 이름 : RangeError
+        console.log(`예외 메세지 : ${e.message}`); // 예외 메세지 : Invalid array length
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
