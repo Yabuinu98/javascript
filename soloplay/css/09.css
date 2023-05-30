@@ -1,5 +1,5 @@
 /* 글꼴 */
-
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Pangolin&display=swap');
 
 /* 전체 윤곽 */
 body{
@@ -11,6 +11,7 @@ body{
 
 /* 전체 박스 */
 .all_box{
+    font-family: 'Cute Font', cursive;
     width: 60%;
     margin-top: 5%;
     padding: 30px;
@@ -20,22 +21,57 @@ body{
     /* box-shadow: 색상 x축 y축 blur정도 */
     box-shadow: black 20px 20px 30px;
 }
+button{
+    font-family: 'Cute Font', cursive;
+    font-size: 20px;
+    background-color: beige;
+    height: 41px;
+    width: 80px;
+    border-radius: 25px;
+}
 
 /* 내부 */
 /* 제목 글꼴 */
 h1{
     margin: 40px 0 50px 0;
     color: cadetblue;
-    font-size: 40px;
+    font-size: 50px;
+}
+
+/* 스케쥴 추가부분 */
+#add_part{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 /* input(입력상자) */
 input{
-    height: 20%;
-    border-radius: 25px;
+    font-family: 'Cute Font', cursive;
+    font-size: 20px;
+    width: 50%;
+    height: 35px;
+    border-radius: 25px 0 0 25px;
     background-color: gray;
     color: white;
+    padding-left: 15px;
 }
 input::placeholder{
     color: white;
+    font-size: 16px;
+}
+
+/* button(일정추가) */
+#add{
+    border-radius: 0 25px 25px 0;
+}
+
+/* button(삭제부분) */
+#select_del{
+    margin-left: -38%;
+}
+
+/* button(모두 삭제부분) */
+#clear{
+    margin-right: 15px;
 }
