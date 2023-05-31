@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체 생성 함수 p392</title>
+    <script>
+      function CreateStudent(이름, 국어, 영어, 수학, 과학) {
+        return {
+          //속성을 선언 객체 선언시 앞의 키와 뒤의 값이 같으면 생략가능
+          이름,
+          국어,
+          영어,
+          수학,
+          과학,
+          //메소드 진행
+          getSum() {
+            return this.국어 + this.영어 + this.수학 + this.과학;
+          },
+          getAverage() {
+            return this.getSum() / 4;
+          },
+          print() {
+            return `${this.이름}\t${this.getSum()}점\t${this.getAverage()}점\n`;
+          },
+        };
+      }
+      const students = [];
+      students.push(CreateStudent("구름", 87, 98, 88, 90));
+      students.push(CreateStudent("별이", 92, 98, 96, 88));
+      students.push(CreateStudent("겨울", 76, 96, 94, 86));
+      students.push(CreateStudent("바다", 98, 52, 98, 92));
+      let output = "이름\t총점\t평균\n";
+      for (const s of students) {
+        output += s.print();
+      }
+      console.log(output);
+      /*이름	총점	평균
+구름	363점	90.75점
+별이	374점	93.5점
+겨울	352점	88점
+바다	340점	85점*/
+    </script>
+  </head>
+  <body></body>
+</html>

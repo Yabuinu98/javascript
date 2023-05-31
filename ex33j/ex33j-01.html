@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체 내용 추가 assign</title>
+    <script>
+      const obj1 = { a: 11, b: 22, c: 33 };
+      console.log(obj1); //{a: 11, b: 22, c: 33}
+      Object.assign(obj1, { d: 44 }); //객체끼리의 내용을 더함
+      console.log(obj1); //{a: 11, b: 22, c: 33, d: 44}
+    </script>
+  </head>
+  <body></body>
+</html>

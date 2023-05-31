@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클래스내부 this 시작</title>
+    <script>
+      const User = function (name, age) {
+        // let this={} this는 이미 내장 되있음
+        this.name = name;
+        this.age = age;
+        this.show = function () {
+          console.log(this.name + "이고" + this.age + "입니다.");
+        };
+        // return this 자연스럽게 리턴 됨.
+      }; // 값은 들어가지나 꺼내지지 않음 새로운 new User로 값을 넣을시 꺼내짐
+      /*const u1=new User('슈퍼맨',23)
+        undefined
+        u1
+        User {name: '슈퍼맨', age: 23, show: ƒ}
+        u1.name
+        '슈퍼맨'
+        u1.age
+        23
+        u1.show()
+        ex33j-04.html:14 슈퍼맨이고23입니다.
+        undefined
+        const u2=new User('베트맨',33)
+        undefined
+        u2
+        User {name: '베트맨', age: 33, show: ƒ}
+        u2.name
+        '베트맨'
+        u2.age
+        33
+        u2.show()
+        ex33j-04.html:14 베트맨이고33입니다.
+        undefined*/
+    </script>
+  </head>
+  <body></body>
+</html>

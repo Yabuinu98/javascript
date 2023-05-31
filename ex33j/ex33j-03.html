@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클래스 흉내</title>
+    <script>
+      const User = function (name, age) {
+        let that = {};
+        that.name = name; //function안의 name 매소드
+        that.age = age; //function안의 age메소드
+        that.show = function () {
+          console.log(that.name + "은" + that.age + "살");
+        };
+        return that; //this를 흉내
+      };
+      /*User('홍길동',23)
+{name: '홍길동', age: 23, show: ƒ}
+User('슈퍼맨',33).show()
+ex33j-03.html:14 슈퍼맨은33살
+undefined
+const u1=User('홍길동',27)
+undefined
+u1.show()
+ex33j-03.html:14 홍길동은27살
+undefined
+const u2=new User('홍길동',27)
+undefined
+u2.show()
+ex33j-03.html:14 홍길동은27살
+undefined*/
+    </script>
+  </head>
+  <body></body>
+</html>

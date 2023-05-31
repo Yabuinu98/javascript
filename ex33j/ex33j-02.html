@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>할일 목록 풀이</title>
+    <script>
+      function localSave(edata) {
+        memory = JSON.stringify(edata);
+        localStorage.setItem("arr", memory);
+      }
+      function getData(edata) {
+        const getInput = document.querySelector("input");
+        edata.forEach((v) => {
+          list(v, v.id);
+        });
+        getInput.value = null;
+        inputData = null;
+      } //저장소에 저장하고 새로고침 하면 저장된 내용을 화면에 뿌려줌
+      function list(v, id) {
+        const ediv = document.createElement("div");
+        const einput = document.createElement("input");
+        const espan = document.createElement("span");
+        const ebutton = document.createElement("button");
+        /*방법1*/
+        // einput.setAttribute("type", "checkbox");
+        // einput.setAttribute("id", `i${id}`);
+        /*방법2*/
+        Object.assign(einput, {
+          type: "checkbox",
+          id: `i${id}`,
+        });
+
+        earr = localStorage.getItem("arr");
+        edata = JSON.parse(earr) ?? [];
+
+        ediv.setAttribute("id", `div${id}`);
+
+        const getDiv = document.querySelector("div");
+        getDiv.appendChild(ediv).append(einput, espan, ebutton);
+        espan.innerHTML = v.data; //함수가 밖에 있어서 데이터값을 매개변수로 받아옴 밑 edata에서 data값을 뜻함
+        ebutton.innerHTML = "제거하기";
+        einput.addEventListener("click", (e) => {
+          //   console.log(e.currentTarget.checked);
+          ediv.style.textDecoration = e.currentTarget.checked
+            ? "line-through"
+            : "none";
+          //   console.log(e.currentTarget.id.slice(1)); //첫번째를 제외한 모든 숫자
+          const fck = edata.findIndex((v) => {
+            return v.id === +e.currentTarget.id.slice(1);
+          });
+          edata[fck].check = e.currentTarget.checked;
+          localSave(edata);
+        });
+        ebutton.addEventListener("click", (e) => {
+          if (e.currentTarget) ediv.remove();
+          const fid = edata.findIndex((v) => {
+            return v.id === id; //매개변수로 입력받은 것과 같은 id값을 찾음
+          });
+          console.log(fid); //인덱스번호 확인
+          edata.splice(fid, 1); //그 id만 찾아서 삭제함
+          localSave(edata);
+        });
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        const h1 = document.createElement("h1");
+        const input = document.createElement("input");
+        const button = document.createElement("button");
+        const clear = document.createElement("button");
+        const div = document.createElement("div");
+        document.body.append(h1, input, button, clear, div);
+        h1.innerHTML = "할 일 목록";
+        button.innerHTML = "추가하기";
+        clear.innerHTML = "삭제하기";
+        let inputData = "";
+        let ck = false;
+        input.addEventListener("keyup", (e) => {
+          inputData = e.currentTarget.value;
+          if (e.key === "Enter") todo(); //input에 enter치면 true
+        });
+
+        let earr = localStorage.getItem("arr"); //localstorage에서 값을 들고옴
+        let edata = JSON.parse(earr) ?? []; //널리싱 null,undefined값 잡아냄
+        if (edata) getData(edata);
+        let nid = 0;
+        button.addEventListener("click", todo);
+
+        function todo() {
+          if (inputData) {
+            nid++;
+            edata.push({ id: nid, data: inputData, check: ck }); //nid 앞으로 ++넣으면 1부터 뒤로 ++넣으면 0부터
+            let memory = JSON.stringify(edata); //저장소에 저장할때는 JSON형식으로 저장
+            localStorage.setItem("arr", memory);
+            if (edata) {
+              list(edata[edata.length - 1], nid); //nid 누적된값 길이에 있는 마지막값 꺼냄
+            }
+            input.value = ""; //보여지는값 날리고
+            inputData = ""; //저장된 값 날리기
+          } else {
+            alert("값을 넣어 주세요..");
+          }
+        }
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
