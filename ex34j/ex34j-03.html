@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class field</title>
+    <script>
+        /* 방법 1 */
+        /* class Btn{
+            constructor(value){
+                this.value = value
+            }
+            click(){
+                console.log(this.value)
+            }
+        } */
+
+        /* 방법 2 */
+        class Btn{
+            constructor(value){
+                this.value = value
+            }
+            click = () => {
+                console.log(this.value)
+            }
+        }
+        let button = new Btn("안녕하세요")
+        button.click() // 방법1 & 2 = 안녕하세요
+        setTimeout(button.click, 3*1000) // 방법1 = undefined / 방법2 = 안녕하세요
+        setTimeout(() => button.click(), 3*1000) // 방법1 = 안녕하세요 / 방법2 = 안녕하세요
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
