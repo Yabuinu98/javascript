@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>정적메소드3</title>
+    <script>
+      /*현상*/
+      //   class School {
+      //     constructor() {
+      //       this._name = "Johndoe";
+      //     }
+      //     static get name() {
+      //       return this._name;
+      //     } //static과 get동시 사용가능하나 this에서 클래스 데이터를 못 가져옴
+      //   }
+      //   //정적메소드의 클래스 데이터 접근 실패
+      //   console.log(School.name); //undefined
+
+      //   //인스턴스화 시켜도 접근 실패
+      //   const school = new School();
+      //   console.log(school.name); //undefined
+
+      /*분석*/
+      class School {
+        constructor() {
+          this.name = "Johndoe";
+        }
+        static staticThis() {
+          return this;
+        }
+        nomalThis() {
+          return this;
+        }
+      }
+      console.log(School.staticThis(), "1:" + School.staticThis().name); //자기가 누군지 가리킴 클래스 그 자체
+
+      const test = new School();
+      console.log(test.nomalThis(), test.nomalThis().name);
+    </script>
+  </head>
+  <body></body>
+</html>
