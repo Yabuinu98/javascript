@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제 1</title>
+    <script>
+        // getter : 모두 다 가능 (예 : 이름 출력가능, 국어 출력가능... 과학 출력가능)
+        // setter : 국어만 수정할 수 있도록 하라.(60 ~ 100 사이값으로만)
+        const student = {이름: "구름", 국어: 87, 영어: 98, 수학: 88, 과학: 90,
+        getName(){
+            return student.이름
+        },
+        getKor(){
+            return student.국어
+        },
+        getEng(){
+            return student.영어
+        },
+        getMath(){
+            return student.수학
+        },
+        getSci(){
+            return student.과학
+        },
+        setKor(value){
+            if(60 >= value || value >= 100){
+                alert("점수를 60 ~ 100 사이값으로만 입력 바랍니다.")
+            }
+            student.국어 = value
+        },
+        }
+        console.log(student.getName()) // 구름
+        console.log(student.getKor()) // 87
+        console.log(student.getEng()) // 98
+        console.log(student.getMath()) // 88
+        console.log(student.getSci()) // 90
+        
+        /* 조작하기 */
+        console.log(student.setKor(65)) // undefined
+        console.log(student.getKor()) // 65
+        console.log(student.setKor(40)) // undefined => alert : 점수를 60 ~ 100 사이값으로만 입력 바랍니다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

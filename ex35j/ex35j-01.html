@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 게터, 세터 사용전 */
+        // const user = {name: "홍길동",age: 33}
+        // console.log(user.name)
+        // console.log(user.age)
+        // user.name = "박길동"
+        // console.log(user.name) // 박길동
+
+        const user = {name: "홍길동",age: 33,
+        // 객체의 메서드
+        getName(){
+            return user.name
+        },
+        setName(value){
+            if(value.length <= 4 && value.length >= 2){
+                alert("이름은 4글자를 초과할 수 없습니다.")
+            }
+            user.name = value
+        },
+        }
+        console.log(user.getName()) // 홍길동
+        user.setName("팍길동")
+        console.log(user.getName()) // 팍길동
+        console.log(user.getName("안녕하세요")) // 이름은 4글자를 초과할 수 없습니다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
