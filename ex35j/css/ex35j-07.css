@@ -6,7 +6,7 @@ html, body{
 /* Header 파트 */
 .header{
     width: 100%;
-    height: 30%;
+    height: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
