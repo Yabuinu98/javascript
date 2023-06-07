@@ -5,11 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const p = document.querySelector("p")
 
     /* nav파트 */
-    const About = document.querySelector("#nav1")
-    const Products = document.querySelector("#nav2")
-    const Technology = document.querySelector("#nav3")
-    const Downloads = document.querySelector("#nav4")
-    const Etc = document.querySelector("#nav5")
+    const [About, Products, Technology, Downloads, Etc] = document.querySelectorAll(".nav>div")
+    // const About = document.querySelector("#nav1")
+    // const Products = document.querySelector("#nav2")
+    // const Technology = document.querySelector("#nav3")
+    // const Downloads = document.querySelector("#nav4")
+    // const Etc = document.querySelector("#nav5")
 
     /* 자동으로 넘어가게하기 */
     function tomato(){
