@@ -78,6 +78,7 @@ input::placeholder{
 
 /* 일정 추가되는 파트 */
 .todo{
+    float: left;
     display: flex;
     align-items: center;
     justify-content: space-between;

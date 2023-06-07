@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         Technology.style.backgroundColor = "gray"
         Downloads.style.backgroundColor = "gray"
         Etc.style.backgroundColor = "gray"
-        setTimeout(green, 1*1000)
+        setTimeout(green, 2*1000)
     }
     function green(){
         h1.textContent = "Products"
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         Technology.style.backgroundColor = "gray"
         Downloads.style.backgroundColor = "gray"
         Etc.style.backgroundColor = "gray"
-        setTimeout(blue, 1*1000)
+        setTimeout(blue, 2*1000)
     }
     function blue(){
         h1.textContent = "Technology"
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         Technology.style.backgroundColor = "blue"
         Downloads.style.backgroundColor = "gray"
         Etc.style.backgroundColor = "gray"
-        setTimeout(orange, 1*1000)
+        setTimeout(orange, 2*1000)
     }
     function orange(){
         h1.textContent = "Downloads"
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         Technology.style.backgroundColor = "gray"
         Downloads.style.backgroundColor = "orange"
         Etc.style.backgroundColor = "gray"
-        setTimeout(pink, 1*1000)
+        setTimeout(pink, 2*1000)
     }
     function pink(){
         h1.textContent = "Etc"
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         Technology.style.backgroundColor = "gray"
         Downloads.style.backgroundColor = "gray"
         Etc.style.backgroundColor = "pink"
-        setTimeout(tomato, 1*1000)
+        setTimeout(tomato, 2*1000)
     }
     tomato() // 트리거 역할
     })

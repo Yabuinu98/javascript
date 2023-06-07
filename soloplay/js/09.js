@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         allbox.appendChild(todos).append(ckbox, span, complete_btn)
         ckbox.setAttribute("type", "checkbox")
         span.textContent = text
+        span.style.fontSize = "20px"
         complete_btn.textContent = "완료"
         } else{
             /* 입력값이 없다면 내용을 입력해주세요 출력 후 입력 시작시 원래대로 */
