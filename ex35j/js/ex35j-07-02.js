@@ -1,72 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
     /* header파트 */
-    const header = document.querySelector(".header")
-    const h1 = document.querySelector("h1")
-    const p = document.querySelector("p")
-
+    const header = document.querySelector(".header");
+    const h1 = document.querySelector("h1");
+    const p = document.querySelector("p");
+    
     /* nav파트 */
-    const [About, Products, Technology, Downloads, Etc] = document.querySelectorAll(".nav>div")
-    // const About = document.querySelector("#nav1")
-    // const Products = document.querySelector("#nav2")
-    // const Technology = document.querySelector("#nav3")
-    // const Downloads = document.querySelector("#nav4")
-    // const Etc = document.querySelector("#nav5")
-
+    const [About, Products, Technology, Downloads, Etc] = document.querySelectorAll(".nav>div");
+    
     /* 자동으로 넘어가게하기 */
-    function tomato(){
-        h1.textContent = "About"
-        p.textContent = "Custom Software Development Company"
-        header.style.backgroundColor = "tomato"
-        About.style.backgroundColor = "tomato"
-        Products.style.backgroundColor = "gray"
-        Technology.style.backgroundColor = "gray"
-        Downloads.style.backgroundColor = "gray"
-        Etc.style.backgroundColor = "gray"
-        setTimeout(green, 2*1000)
+    const sections = [
+    { title: "About", description: "Custom Software Development Company", color: "tomato" },
+    { title: "Products", description: "Building tailored software to address critical needs of global enterprises.", color: "green" },
+    { title: "Technology", description: "Machine Learning, Artificial Intelligent, Cloud Platform.", color: "blue" },
+    { title: "Downloads", description: "You can download a free 10 days trial.", color: "orange" },
+    { title: "Etc", description: "Everything is fine.", color: "pink" },
+    ];
+    
+    let currentIndex = 0;
+    
+    function changeSection(index) {
+    const { title, description, color } = sections[index];
+    h1.textContent = title;
+    p.textContent = description;
+    header.style.backgroundColor = color;
+    [About, Products, Technology, Downloads, Etc].forEach((element, i) => {
+        element.style.backgroundColor = i === index ? color : "gray";
+      });
+      
+      currentIndex = index;
+      setTimeout(changeSection, 1000, (currentIndex + 1) % sections.length);
     }
-    function green(){
-        h1.textContent = "Products"
-        p.textContent = "Building tailored software to address critical needs of global enterprises."
-        header.style.backgroundColor = "green"
-        About.style.backgroundColor = "gray"
-        Products.style.backgroundColor = "green"
-        Technology.style.backgroundColor = "gray"
-        Downloads.style.backgroundColor = "gray"
-        Etc.style.backgroundColor = "gray"
-        setTimeout(blue, 2*1000)
-    }
-    function blue(){
-        h1.textContent = "Technology"
-        p.textContent = "Machine Learning, Artificial Intelligent, Cloud Platform."
-        header.style.backgroundColor = "blue"
-        About.style.backgroundColor = "gray"
-        Products.style.backgroundColor = "gray"
-        Technology.style.backgroundColor = "blue"
-        Downloads.style.backgroundColor = "gray"
-        Etc.style.backgroundColor = "gray"
-        setTimeout(orange, 2*1000)
-    }
-    function orange(){
-        h1.textContent = "Downloads"
-        p.textContent = "You can download a free 10 days trial."
-        header.style.backgroundColor = "orange"
-        About.style.backgroundColor = "gray"
-        Products.style.backgroundColor = "gray"
-        Technology.style.backgroundColor = "gray"
-        Downloads.style.backgroundColor = "orange"
-        Etc.style.backgroundColor = "gray"
-        setTimeout(pink, 2*1000)
-    }
-    function pink(){
-        h1.textContent = "Etc"
-        p.textContent = "Everything is fine."
-        header.style.backgroundColor = "pink"
-        About.style.backgroundColor = "gray"
-        Products.style.backgroundColor = "gray"
-        Technology.style.backgroundColor = "gray"
-        Downloads.style.backgroundColor = "gray"
-        Etc.style.backgroundColor = "pink"
-        setTimeout(tomato, 2*1000)
-    }
-    tomato() // 트리거 역할
-    })
+    changeSection(0); // 트리거 역할
+    });
