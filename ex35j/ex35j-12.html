@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클로저4(closure)</title>
+    <script>
+      function init() {
+        let num = 0;
+        function add() {
+          num++;
+          return num;
+        }
+        function reset() {
+          num = 0;
+          return num;
+        }
+        function show() {
+          console.log(num);
+        }
+        return { add, reset, show };
+      }
+      const ini = init();
+      console.log(ini.add()); // 1
+      console.log(ini.add()); // 2
+      console.log(ini.add()); // 3
+      console.log(ini.reset()); // 0
+      console.log(ini.add()); // 1
+      console.log(ini.add()); // 2
+      console.log(ini.add()); // 3
+      console.log(ini.show()); // 3
+    </script>
+  </head>
+  <body></body>
+</html>
