@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클로저3(closure)</title>
+  </head>
+  <body>
+    Count is <span>0</span>
+    <script>
+      function init() {
+        const span = document.querySelector("span");
+        let count = 0;
+
+        setInterval(() => {
+          count++;
+          span.textContent = count;
+        }, 1 * 1000);
+
+        function reset() {
+          count = 0;
+          span.textContent = count;
+        }
+        return { reset }; // 키값이 같을때는 ': reset' 생략 가능!!!
+      }
+      const start = init();
+      // start.reset()을 console에 찍으면 0으로 리셋가능
+    </script>
+  </body>
+</html>

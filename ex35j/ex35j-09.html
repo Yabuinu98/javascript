@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클로저1(closure)</title>
+    <script>
+      function addFunc(x) {
+        return function (y) {
+          return x + y;
+        };
+      }
+      const addFunc2 = addFunc(5);
+      console.log(addFunc2(3)); // 8
+      console.log(addFunc2(2)); // 7
+      /* 풀이 */
+      // 1. 처음 변수 addFunc(5)는 addFunc(x)의 변수이다
+      // 2. 추가로 주는 addFunc2(3)는 addFunc함수 내부의 익명함수의 변수로 사용된다
+    </script>
+  </head>
+  <body></body>
+</html>
