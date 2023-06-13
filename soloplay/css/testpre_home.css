@@ -1,0 +1,62 @@
+/* 윤곽 */
+html, body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* header */
+#header{
+    margin-left: -2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    height: 10%;
+    background-color: gray;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px black;
+}
+#header a{
+    color: white;
+    font-size: 20px;
+}
+#header #home a{
+    color: yellow;
+}
+#header a:hover{
+    color: yellow;
+    font-size: 25px;
+}
+
+/* main */
+#content{
+    margin: 2% 0 0 -2%;
+    width: 90%;
+    height: 80%;
+    border-radius: 20px;
+    background-image: url(/soloplay/imgs/Plants\ Window\ GIF\ -\ Plants\ Window\ -\ Discover\ &\ Share\ GIFs.gif);
+    background-size: cover;
+    box-shadow: 10px 10px 10px gray;
+    animation: myani 5s infinite;
+}
+@keyframes myani {
+    0%{
+        width: 90%;
+        height: 80%;
+    }
+    30%{
+        transform: scale(1.02);
+    }
+    60%{
+        transform: scale(0.98);
+    }
+    100%{
+        width: 90%;
+        height: 80%;
+    }
+}

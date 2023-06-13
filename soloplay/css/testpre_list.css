@@ -1,0 +1,87 @@
+/* 윤곽 */
+html, body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: beige;
+}
+
+/* header */
+#header{
+    margin-left: -2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    height: 10%;
+    background-color: gray;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px black;
+}
+#header a{
+    color: white;
+    font-size: 20px;
+}
+#header #list a{
+    color: yellow;
+}
+#header a:hover{
+    color: yellow;
+    font-size: 25px;
+}
+
+/* main */
+#content{
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    margin: 3% 0 0 -2%;
+    width: 90%;
+    height: 70%;
+    border-radius: 20px;
+    background-color: bisque;
+    box-shadow: 10px 10px 10px gray;
+}
+#content div{
+    width: 5%;
+    height: 5%;
+    margin-top: 2%;
+}
+
+/* footer */
+#footer{
+    margin: 2% 0 0 -2%;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 10%;
+}
+#footer input{
+    margin-left: 15%;
+    margin-right: -8%;
+    padding: 10px;
+    width: 60%;
+    height: 30px;
+    border: 2px solid tomato;
+    border-radius: 10px;
+}
+#footer button{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: plum;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 5px 5px 5px black;
+}
+#footer button:hover{
+    background-color: plum;
+    color: black;
+    box-shadow: inset 5px 5px 5px black;
+}
