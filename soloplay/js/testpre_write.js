@@ -4,9 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const titleName = document.getElementById("title_name")
     const 등록버튼 = document.getElementById("update")
 
-    /* localStorage 부분 */
-    // 제목, 작성자, 작성일자를 객체로 저장해서 list.html에서 쓴다
-
     /* 1. arr에 localStroage input속성에 값이 있으면 빈배열 출력 */
     // 아래 구문에서 푸쉬할 예정 => 제일 상단에 있지만 제일 마지막 느낌임
     let arr = JSON.parse(localStorage.getItem('input')) ?? []
