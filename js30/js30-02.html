@@ -11,8 +11,8 @@
         const input = document.querySelector("input");
         const button = document.querySelector("button");
 
-        const savedValue = localStorage.getItem("input"); // input 태그의 값을 가져와라
-        // console.log(savedValue); // null(input.value느낌)
+        const savedValue = localStorage.getItem("input"); // input 속성의 값을 가져와라
+        // console.log(savedValue); // null
 
         /* savedValue에 값이 있으면 */
         if (savedValue) {
@@ -25,7 +25,6 @@
           const value = event.currentTarget.value; // 이벤트 진행중인 곳의 값 = 실시간 입력 값 = value에 담기
           /* 실시간 입력 값을  */
           localStorage.setItem("input", value); // localStorage.input = value
-          console.log(savedValue); //
         });
 
         /* 지우기 버튼을 누르면 */
