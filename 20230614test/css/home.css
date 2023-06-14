@@ -44,7 +44,7 @@ main{
     width: 90%;
     height: 80%;
     border-radius: 20px;
-    background-image: url(/20230614test/imgs/개울.gif);
+    background-image: url(/20230614test/imgs/neko.gif);
     background-size: cover;
     box-shadow: 10px 10px 10px gray;
     animation: myani 5s infinite;
