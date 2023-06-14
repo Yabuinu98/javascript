@@ -44,8 +44,6 @@ main{
     width: 90%;
     height: 80%;
     border-radius: 20px;
-    background-image: url(/20230614test/imgs/neko.gif);
-    background-size: cover;
     box-shadow: 10px 10px 10px gray;
     animation: myani 5s infinite;
 }
@@ -64,4 +62,13 @@ main{
         width: 90%;
         height: 80%;
     }
+}
+main a{
+    width: 100%;
+    height: 100%;
+}
+main a img{
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
 }
