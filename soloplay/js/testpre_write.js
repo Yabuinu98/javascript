@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     const Title = document.getElementById("title")
+    const Discription = document.getElementById("discription")
     const Name = document.getElementById("name")
     const 작성버튼 = document.getElementById("summit")
 
     /* 1. arr에 localStroage input속성에 값이 있으면 빈배열 출력 */
     
     // 아래 구문에서 푸쉬할 예정 => 제일 상단에 있지만 제일 마지막 느낌임
+    // ?? 연산자는 null 또는 undefined인 경우에 대체 값을 지정하는 연산자
     let arr = JSON.parse(localStorage.getItem('input')) ?? []
 
     /* 작성버튼을 누르면 -> localStroage에 저장되게하는 부분 */
@@ -37,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
         /* 1-3. 저장 후 input, textarea태그 내용 비우기(잔존 데이터 제거) */
         Title.value = '';
+        Discription.value = '';
         Name.value = '';
       }
     })

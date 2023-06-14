@@ -1,38 +1,20 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script>
-        const arr = [6,7,0,9,1,8,2,1,0,0,9,1,3,6,4,0,1,0,6]
-        let a = arr.indexOf(0) // 2
-        let b = arr.indexOf(2) // 6
-        let c = arr.indexOf(9) // 3
-        let d = arr.indexOf(9, 2) // 3
-        let d1 = arr.indexOf(8, 4) // 5
-        let d2 = arr.indexOf(7, 1) // 1
-        let d3 = arr.indexOf(9, -1) // -1
-        let e = arr.indexOf(8, -2) // -1
-        let f = arr.indexOf(6, -3) // 18
-        console.log(a)
-        console.log(b)
-        console.log(c)
-        console.log(d)
-        console.log(d1)
-        console.log(d2)
-        console.log(d3)
-        console.log(e)
-        console.log(f)
-
-        const todos = ['우유구매', '업무 메일 확인하기', '필라테스 수업']
-        for(const i of todos){
-            console.log(`오늘의 할일 : ${i}`)
-        }
-    </script>
-</head>
-<body>
-    
-</body>
+    <script></script>
+  </head>
+  <body>
+    <div class="all">
+      <input
+        type="text"
+        placeholder="내용을 입력하시오"
+        pattern="[가-힣]{1,3}"
+      />
+      <button type="submit">제출</button>
+    </div>
+  </body>
 </html>

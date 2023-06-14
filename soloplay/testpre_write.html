@@ -24,7 +24,12 @@
     <div id="content">
       <div id="content_title">
         <span>제목</span>
-        <input id="title" type="text" placeholder="제목을 입력하시오" />
+        <input
+          id="title"
+          type="text"
+          placeholder="제목을 입력하시오"
+          pattern="[가-힣]{5,10}"
+        />
       </div>
       <div id="content_discription">
         <span>내용</span>
@@ -36,7 +41,12 @@
         ></textarea>
       </div>
       <div id="content_name">
-        <input id="name" type="text" placeholder="닉네임 입력자리" />
+        <input
+          id="name"
+          type="text"
+          placeholder="닉네임 입력자리"
+          pattern="[a-z가-힣]{2,5}"
+        />
       </div>
     </div>
     <!-- // main -->
