@@ -1,3 +1,6 @@
+/* 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
+
 /* 윤곽 */
 html, body{
     width: 100%;
@@ -11,7 +14,8 @@ body{
 }
 
 /* header */
-#header{
+header{
+    font-family: 'Single Day', cursive;
     margin-left: -2%;
     display: flex;
     justify-content: space-around;
@@ -22,26 +26,25 @@ body{
     border-radius: 20px;
     box-shadow: 10px 10px 10px black;
 }
-#header a{
+header a{
     color: white;
-    font-size: 20px;
+    font-size: 30px;
 }
-#header #home a{
+header #home a{
     color: yellow;
 }
-#header a:hover{
+header a:hover{
     color: yellow;
-    font-size: 25px;
+    font-size: 40px;
 }
 
 /* main */
-#content{
+main{
     margin: 2% 0 0 -2%;
     width: 90%;
     height: 80%;
     border-radius: 20px;
     background-image: url(/20230614test/imgs/개울.gif);
-    /* background-image: url(/20230614test/imgs/Stardust.gif); */
     background-size: cover;
     box-shadow: 10px 10px 10px gray;
     animation: myani 5s infinite;

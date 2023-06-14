@@ -1,3 +1,6 @@
+/* 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
+
 /* 윤곽 */
 html, body{
     width: 100%;
@@ -11,7 +14,8 @@ body{
 }
 
 /* header */
-#header{
+header{
+    font-family: 'Single Day', cursive;
     margin-left: -2%;
     display: flex;
     justify-content: space-around;
@@ -22,20 +26,21 @@ body{
     border-radius: 20px;
     box-shadow: 10px 10px 10px black;
 }
-#header a{
+header a{
     color: white;
-    font-size: 20px;
+    font-size: 30px;
 }
-#header #write a{
+header #write a{
     color: yellow;
 }
-#header a:hover{
+header a:hover{
     color: yellow;
-    font-size: 25px;
+    font-size: 40px;
 }
 
 /* main */
-#content{
+main{
+    font-family: 'Single Day', cursive;
     padding-top: 2%;
     display: flex;
     flex-direction: column;
@@ -43,40 +48,48 @@ body{
     height: 60%;
     margin: 2% 0 0 -2%;
     border-radius: 20px;
-    background-color: bisque;
-    box-shadow: 10px 10px 10px gray;
+    background-color: darkgray;
+    box-shadow: 10px 10px 10px black;
 }
-#content :is(#content_title, #content_discription, #content_name){
+main :is(input, textarea){
+    box-shadow: 5px 5px 5px black;
+}
+main span{
+    color: white;
+    font-size: 20px;
+}
+main :is(#content_title, #content_discription, #content_name){
     margin-left: 2%;
     margin-bottom: 2%;
 }
-#content #content_title span{
+main #content_title span{
     margin-right: 1%;
 }
-#content #content_title input{
+main #content_title input{
     padding: 1% 0 1% 0;
     width: 92.5%;
     text-align: center;
     border-radius: 5px;
 }
-#content #content_discription{
+main #content_discription{
     display: flex;
     flex-direction: column;
 }
-#content #content_discription span{
+main #content_discription span{
     margin-bottom: 1%;
 }
-#content #content_discription textarea{
+main #content_discription textarea{
     padding: 2% 0 2% 2%;
     width: 94%;
     min-height: 90%;
     border-radius: 10px;
 }
-#content #content_name{
+main #content_name{
+    margin-top: 2%;
     display: flex;
     justify-content: end;
 }
-#content #content_name input{
+main #content_name input{
     border-radius: 5px;
     text-align: center;
     margin: 4% 4% 0 0;
@@ -85,29 +98,29 @@ body{
 }
 
 /* footer */
-#footer{
+footer{
     margin: 2% 0 0 -2%;
     display: flex;
     justify-content: end;
     width: 90%;
     height: 10%;
 }
-#footer button{
-    width: 100px;
-    height: 50px;
+footer button{
+    font-family: 'Single Day', cursive;
+    width: 130px;
+    height: 60px;
     border-radius: 10px;
-    border: none;
-    background-color: plum;
+    border: 5px solid black;
+    background-color: darkgray;
     color: white;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 20px;
     box-shadow: 5px 5px 5px black;
 }
-#footer button:hover{
-    background-color: plum;
+footer button:hover{
+    background-color: darkgray;
     color: black;
     box-shadow: inset 5px 5px 5px black;
 }
-#footer #summit{
+footer #summit{
     margin-left: 3%;
 }
