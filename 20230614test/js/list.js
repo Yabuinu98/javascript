@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let span3 = document.createElement("span")
         let span4 = document.createElement("span")
         Main.appendChild(div).append(span1, a, span3, span4)
+        
+        /* a태그로 감아서 내용을 모달로 보여주려했는데 실패했습니다.. */
         a.appendChild(span2)
         a.setAttribute("href", "./write.html")
         span1.textContent = i+1
